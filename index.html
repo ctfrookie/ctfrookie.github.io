@@ -2,39 +2,78 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>blog`Liu</title>
-    <style>
-        body {
-            background: #000000;
-            display: grid;
-            /* 使用CSS Grid布局 */
-            place-items: center;
-            /* 使内容居中对齐 */
-            height: 100vh;
-            margin: 0;
-            padding: 0;
-            background: url("/flag.jpg");
-        }
-        
-        .container {
-            text-align: center;
-        }
-        
-        h1 {
-            color: #ffffff;
-            margin-top: 0;
-            /* 移除默认的h1元素上边距 */
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CTF比赛信息</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    #ctf-info {
+      max-width: 800px;
+      margin: 20px auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-auto-rows: minmax(150px, auto);
+      gap: 1rem;
+    }
+
+    .ctf-info-item {
+      background-color: #fff;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .ctf-info-item:hover {
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    }
+
+    .ctf-info-item h2 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .ctf-info-item p {
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .ctf-info-item a {
+      color: #007bff;
+      text-decoration: none;
+    }
+  </style>
 </head>
 
 <body>
-    <div class="container">
-       
-        <hr>
-    </div>
+  <div id="ctf-info"></div>
+  <script>
+    fetch("https://raw.githubusercontent.com/ProbiusOfficial/Hello-CTFtime/main/CN.json")
+      .then((response) => response.json())
+      .then((data) => {
+        const sortedData = data.data.result.sort((a, b) => a.id - b.id);
+        const ctfInfoDiv = document.getElementById('ctf-info');
+        for (let i = 0; i < sortedData.length; i++) {
+          const ctfInfo = sortedData[i];
+          const ctfInfoItem = document.createElement('div');
+          ctfInfoItem.classList.add('ctf-info-item');
+          ctfInfoItem.innerHTML = `
+            <h2><a href="${ctfInfo.link}">${ctfInfo.name}</a></h2>
+            <p>比赛类型: ${ctfInfo.type}</p>
+            <p>报名时间: ${ctfInfo.bmks} - ${ctfInfo.bmjz}</p>
+            <p>比赛时间: ${ctfInfo.bsks} - ${ctfInfo.bsjs}</p>
+            <p>其他说明: ${ctfInfo.readmore}</p>
+          `;
+          ctfInfoDiv.appendChild(ctfInfoItem);
+        }
+      });
+  </script>
 </body>
 
 </html>
