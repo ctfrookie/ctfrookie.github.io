@@ -1,5 +1,9 @@
 /// <reference path="enviroment.d.ts" />
 'use strict';
+<<<<<<< HEAD
+
+=======
+>>>>>>> 0b8a243337f94af1a2d11d6bc8a5dbdcb26f8148
 function getElement(string, item = document.documentElement) {
     let tmp = item.querySelector(string);
     if (tmp === null) {
@@ -7,6 +11,10 @@ function getElement(string, item = document.documentElement) {
     }
     return tmp;
 }
+<<<<<<< HEAD
+
+=======
+>>>>>>> 0b8a243337f94af1a2d11d6bc8a5dbdcb26f8148
 function getParent(item, level = 1) {
     while (level--) {
         let tmp = item.parentElement;
@@ -17,6 +25,10 @@ function getParent(item, level = 1) {
     }
     return item;
 }
+<<<<<<< HEAD
+
+=======
+>>>>>>> 0b8a243337f94af1a2d11d6bc8a5dbdcb26f8148
 function format(format, ...args) {
     return format.replaceAll(/\$\*?[0-9]*/g, (match) => {
         if (match === '$*') {
@@ -75,8 +87,12 @@ class canvasDust {
                     const y = Math.floor(Math.random() * window.innerHeight);
                     i.x = x;
                     i.y = y;
+<<<<<<< HEAD
+                } else {
+=======
                 }
                 else {
+>>>>>>> 0b8a243337f94af1a2d11d6bc8a5dbdcb26f8148
                     i.x -= i.vx;
                     i.y -= i.vy;
                 }
@@ -135,8 +151,12 @@ canvasDust.getPoint = (number = 1) => {
 };
 try {
     var canvasDusts = new canvasDust('#canvas-dust');
+<<<<<<< HEAD
+} catch (e) {}
+=======
 }
 catch (e) { }
+>>>>>>> 0b8a243337f94af1a2d11d6bc8a5dbdcb26f8148
 /// <reference path="common/base.ts" />
 class expands {
     constructor() {
@@ -145,8 +165,12 @@ class expands {
             if (block.classList.contains(s0)) {
                 block.classList.remove(s0);
                 block.classList.add(s1);
+<<<<<<< HEAD
+            } else {
+=======
             }
             else {
+>>>>>>> 0b8a243337f94af1a2d11d6bc8a5dbdcb26f8148
                 block.classList.remove(s1);
                 block.classList.add(s0);
             }
@@ -192,7 +216,12 @@ class Code {
             return str.toUpperCase();
         };
         this.doAsCode = (item) => {
+<<<<<<< HEAD
+            const codeType = this.resetName(item.classList[1]),
+                lineCount = getElement('.gutter', item).children[0].childElementCount >> 1;
+=======
             const codeType = this.resetName(item.classList[1]), lineCount = getElement('.gutter', item).children[0].childElementCount >> 1;
+>>>>>>> 0b8a243337f94af1a2d11d6bc8a5dbdcb26f8148
             item.classList.add(lineCount < 16 ? 'open' : 'fold');
             item.classList.add('expand-box');
             item.innerHTML =
@@ -213,6 +242,14 @@ class Code {
             });
         };
         this.paintMermaid = () => {
+<<<<<<< HEAD
+            if (typeof(mermaid) === 'undefined')
+                return;
+            mermaid.initialize(document.documentElement.getAttribute('theme-mode') === 'dark' ? { theme: 'dark' } : { theme: 'default' });
+            if (typeof(mermaid.run) !== 'undefined') {
+                mermaid.run({ querySelector: '.mermaid' });
+            } else {
+=======
             if (typeof (mermaid) === 'undefined')
                 return;
             mermaid.initialize(document.documentElement.getAttribute('theme-mode') === 'dark' ?
@@ -221,6 +258,7 @@ class Code {
                 mermaid.run({ querySelector: '.mermaid' });
             }
             else {
+>>>>>>> 0b8a243337f94af1a2d11d6bc8a5dbdcb26f8148
                 mermaid.init();
             }
         };
@@ -233,6 +271,13 @@ class Code {
                             if (!item.classList.contains('mermaid') && item.querySelector('.code-header') === null) {
                                 if (item.querySelector('.mermaid') !== null) {
                                     this.doAsMermaid(item);
+<<<<<<< HEAD
+                                } else {
+                                    this.doAsCode(item);
+                                }
+                            }
+                        } catch (e) {
+=======
                                 }
                                 else {
                                     this.doAsCode(item);
@@ -240,6 +285,7 @@ class Code {
                             }
                         }
                         catch (e) {
+>>>>>>> 0b8a243337f94af1a2d11d6bc8a5dbdcb26f8148
                             return;
                         }
                         item.setAttribute('code-find', '');
@@ -252,7 +298,11 @@ class Code {
             expand.setHTML();
         };
         this.resetMermaid = () => {
+<<<<<<< HEAD
+            if (typeof(mermaid) === 'undefined')
+=======
             if (typeof (mermaid) === 'undefined')
+>>>>>>> 0b8a243337f94af1a2d11d6bc8a5dbdcb26f8148
                 return;
             let id = 0;
             document.querySelectorAll('.mermaid').forEach((item) => {
@@ -291,15 +341,24 @@ class Cursor {
         };
         this.move = (timestamp) => {
             if (this.now !== undefined) {
+<<<<<<< HEAD
+                let delX = this.now.x - this.nowX,
+                    delY = this.now.y - this.nowY;
+=======
                 let delX = this.now.x - this.nowX, delY = this.now.y - this.nowY;
+>>>>>>> 0b8a243337f94af1a2d11d6bc8a5dbdcb26f8148
                 this.nowX += delX * Math.min(0.025 * (timestamp - this.last), 1);
                 this.nowY += delY * Math.min(0.025 * (timestamp - this.last), 1);
                 this.set();
                 this.last = timestamp;
                 if (Math.abs(delX) > 0.1 || Math.abs(delY) > 0.1) {
                     window.requestAnimationFrame(this.move);
+<<<<<<< HEAD
+                } else {
+=======
                 }
                 else {
+>>>>>>> 0b8a243337f94af1a2d11d6bc8a5dbdcb26f8148
                     this.set(this.now.x, this.now.y);
                     this.moveIng = false;
                 }
@@ -380,7 +439,12 @@ class Index {
         this.tocLink = document.querySelectorAll('null');
         this.setItem = (item) => {
             item.classList.add('active');
+<<<<<<< HEAD
+            let parent = getParent(item),
+                brother = parent.children;
+=======
             let parent = getParent(item), brother = parent.children;
+>>>>>>> 0b8a243337f94af1a2d11d6bc8a5dbdcb26f8148
             for (let i = 0, length = brother.length; i < length; ++i) {
                 const item = brother.item(i);
                 if (item.classList.contains('toc-child')) {
@@ -441,8 +505,12 @@ class Index {
                 if (this.tocLink.length) {
                     this.setItem(this.tocLink.item(0));
                 }
+<<<<<<< HEAD
+            } catch {}
+=======
             }
             catch { }
+>>>>>>> 0b8a243337f94af1a2d11d6bc8a5dbdcb26f8148
         };
         this.setHTML();
         document.addEventListener('pjax:success', this.setHTML);
@@ -462,12 +530,25 @@ class Header {
         this.closeSearch = false;
         this.readyRev = true;
         this.relabel = () => {
+<<<<<<< HEAD
+            let navs = this.header.querySelectorAll('.navItem'),
+                mayLen = 0,
+                may = navs.item(0);
+            navs.forEach(item => {
+                try {
+                    let now = item,
+                        link = getElement('a', now);
+                    if (link !== null) {
+                        let href = link.href,
+                            match = now.getAttribute('matchdata');
+=======
             let navs = this.header.querySelectorAll('.navItem'), mayLen = 0, may = navs.item(0);
             navs.forEach(item => {
                 try {
                     let now = item, link = getElement('a', now);
                     if (link !== null) {
                         let href = link.href, match = now.getAttribute('matchdata');
+>>>>>>> 0b8a243337f94af1a2d11d6bc8a5dbdcb26f8148
                         now.classList.remove('active');
                         if (getParent(link) != now) {
                             return;
@@ -486,8 +567,12 @@ class Header {
                             });
                         }
                     }
+<<<<<<< HEAD
+                } catch (e) {}
+=======
                 }
                 catch (e) { }
+>>>>>>> 0b8a243337f94af1a2d11d6bc8a5dbdcb26f8148
             });
             if (may !== null) {
                 do {
@@ -536,8 +621,12 @@ class Header {
             this.readyRev = false;
             if (item.classList.contains('expanded')) {
                 this.close(item);
+<<<<<<< HEAD
+            } else {
+=======
             }
             else {
+>>>>>>> 0b8a243337f94af1a2d11d6bc8a5dbdcb26f8148
                 this.open(item);
             }
             setTimeout(() => this.readyRev = true, 300);
@@ -592,8 +681,12 @@ class Scroll {
                         this.totop.style.opacity = '1';
                     }
                 }, 300);
+<<<<<<< HEAD
+            } else {
+=======
             }
             else {
+>>>>>>> 0b8a243337f94af1a2d11d6bc8a5dbdcb26f8148
                 this.totop.style.opacity = '0';
                 this.visible = false;
                 setTimeout(() => {
@@ -650,8 +743,12 @@ class Scroll {
                             if (this.height - nowheight > 100) {
                                 navBtn.classList.add('hide-btn');
                                 this.height = nowheight;
+<<<<<<< HEAD
+                            } else if (nowheight > this.height) {
+=======
                             }
                             else if (nowheight > this.height) {
+>>>>>>> 0b8a243337f94af1a2d11d6bc8a5dbdcb26f8148
                                 if (nowheight - this.height > 20) {
                                     navBtn.classList.remove('hide-btn');
                                 }
@@ -667,15 +764,23 @@ class Scroll {
                         if (!this.getingtop) {
                             this.totopChange(nowheight);
                         }
+<<<<<<< HEAD
+                    } catch (e) {}
+=======
                     }
                     catch (e) { }
+>>>>>>> 0b8a243337f94af1a2d11d6bc8a5dbdcb26f8148
                 };
                 getElement('main').addEventListener('scroll', onScroll);
                 this.height = 0;
                 this.visible = false;
                 this.totop = getElement('#to-top');
+<<<<<<< HEAD
+            } catch (e) {}
+=======
             }
             catch (e) { }
+>>>>>>> 0b8a243337f94af1a2d11d6bc8a5dbdcb26f8148
         };
         this.checkTouchMove = (event) => {
             if (event.changedTouches[0].identifier === this.lastID) {
@@ -697,8 +802,12 @@ class Scroll {
                 this.lastID = event.changedTouches[0].identifier;
                 if (event.changedTouches[0].screenY > this.touchY) {
                     this.slideUp();
+<<<<<<< HEAD
+                } else {
+=======
                 }
                 else {
+>>>>>>> 0b8a243337f94af1a2d11d6bc8a5dbdcb26f8148
                     this.slideDown();
                 }
                 this.touchY = event.changedTouches[0].screenY;
@@ -725,8 +834,12 @@ class Scroll {
             if (getElement('article').getBoundingClientRect().top >= 0) {
                 if (event.deltaY < 0) {
                     this.slideUp();
+<<<<<<< HEAD
+                } else {
+=======
                 }
                 else {
+>>>>>>> 0b8a243337f94af1a2d11d6bc8a5dbdcb26f8148
                     this.slideDown();
                 }
             }
@@ -798,8 +911,12 @@ class pjaxSupport {
 }
 try {
     new pjaxSupport();
+<<<<<<< HEAD
+} catch (e) {}
+=======
 }
 catch (e) { }
+>>>>>>> 0b8a243337f94af1a2d11d6bc8a5dbdcb26f8148
 class ColorMode {
     constructor() {
         this.html = document.documentElement;
@@ -827,8 +944,12 @@ class ColorMode {
                     this.html.setAttribute('theme-mode', 'light');
                     this.dark = false;
                     window.localStorage['theme-mode'] = 'light';
+<<<<<<< HEAD
+                } else {
+=======
                 }
                 else {
+>>>>>>> 0b8a243337f94af1a2d11d6bc8a5dbdcb26f8148
                     this.html.setAttribute('theme-mode', 'dark');
                     this.dark = true;
                     window.localStorage['theme-mode'] = 'dark';
@@ -859,8 +980,12 @@ class ColorMode {
 }
 try {
     var colorMode = new ColorMode();
+<<<<<<< HEAD
+} catch (e) {}
+=======
 }
 catch (e) { }
+>>>>>>> 0b8a243337f94af1a2d11d6bc8a5dbdcb26f8148
 class Pair {
     constructor(first, second) {
         this.comment = first;
@@ -902,8 +1027,12 @@ class Comments {
             this.search.forEach((item) => {
                 try {
                     this.elements.push(new Pair(getElement(`#${item}`), getElement(`.${item}-sel`)));
+<<<<<<< HEAD
+                } catch (e) {}
+=======
                 }
                 catch (e) { }
+>>>>>>> 0b8a243337f94af1a2d11d6bc8a5dbdcb26f8148
             });
             new Selectors(this.elements, 0);
         };
@@ -921,4 +1050,8 @@ new Comments();
 /// <reference path="include/pjaxSupport.ts" />
 /// <reference path="include/ColorMode.ts" />
 /// <reference path="include/Comments.ts" />
+<<<<<<< HEAD
 /// <reference path="include/Expands.ts" />
+=======
+/// <reference path="include/Expands.ts" />
+>>>>>>> 0b8a243337f94af1a2d11d6bc8a5dbdcb26f8148
