@@ -1,0 +1,106 @@
+<!DOCTYPE html><html lang="zh-cn" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Ubuntu Server使用Docker容器快速创建DVWA靶场 | CTFrookie</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 - $1 行","copy":"复制"}}</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>:root {
+ --dark-background: url('/img/bg.jpg');
+ --light-background: url('https://api.tanmantang.com/api/mc');
+ --theme-encrypt-confirm: '确认'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script><script>LA.init({id:"3HQbQtTptnnrcizP",ck:"3HQbQtTptnnrcizP",autoTrack:true})</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.busuanzi'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);document.addEventListener('pjax:success', _ => bszCaller.fetch(
+ "//busuanzi.ibruce.info/busuanzi?jsonpCallback=BusuanziCallback", a => {
+  bszTag.texts(a),
+  bszTag.shows()
+}));reset()})</script><meta name="generator" content="Hexo 7.0.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem"><a class="navBlock" href="/Links/"><span class="navItemTitle">Links</span></a></li><li class="navItem"><a class="navBlock" href="/CTFEvents/"><span class="navItemTitle">CTF国内赛事</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/tools/"><span class="navItemTitle">Tools</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>Ubuntu Server使用Docker容器快速创建DVWA靶场</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2024-01-06T06:24:00.000Z" id="date"> 2024-01-06</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2024-02-06T15:55:58.000Z" id="updated"> 2024-02-06</time></div></span><br><span id="busuanzi_container_page_pv">页面浏览：<span class="control" id="busuanzi_value_page_pv">加载中...</span></span></div></div><hr><div id="post-content"><p><del>使用VMware安装Ubuntu系统，安装Docker容器，使用Docker容器搜索DVWA镜像，选择一个的安装，启动容器访问测试</del></p>
+<hr>
+<h3 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h3><blockquote>
+<p>Vmware虚拟机软件，Ubuntu Server镜像文件 可以参考:</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-attr">https</span>:<span class="hljs-comment">//blog.csdn.net/weixin_54361902/article/details/131124076</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="下载-镜像源链接"><a href="#下载-镜像源链接" class="headerlink" title="下载&amp;镜像源链接"></a>下载&amp;镜像源链接</h3><blockquote>
+<p>Ubuntu Server 20.0.4镜像下载链接：</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">https://mirrors.tuna.tsinghua.edu.cn/ubuntu-releases/20.04/ubuntu-20.04.6-live-server-amd64.iso<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>也可在此链接内选择自己需要的版本:</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">https://mirrors.tuna.tsinghua.edu.cn/ubuntu-releases/<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Ubuntu镜像源地址(也可以参考<a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/%E8%BF%99%E9%87%8C%E9%85%8D%E7%BD%AE)%EF%BC%9A">https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/这里配置)：</a></p>
+</blockquote>
+<blockquote>
+<p> 最好安装的时候就配置好镜像源</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">阿里云：https://mirrors.aliyun.com/ubuntu/<br>或清华镜像源：https://mirrors.tuna.tsinghua.edu.cn/ubuntu/<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="安装并配置docker"><a href="#安装并配置docker" class="headerlink" title="安装并配置docker"></a>安装并配置docker</h3><p>1.使用下列命令安装docker</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">apt install docker.<span class="hljs-property">io</span>   #安装docker容器<br></code></pre></td></tr></table></figure>
+
+<p>2.使用下列命令编辑并创建docker的镜像源配置文件，下面为网易的镜像源</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript">vi /etc/docker/daemon.<span class="hljs-property">json</span><br>&#123;<br> <span class="hljs-string">&quot;registry-mirrors&quot;</span>: [<span class="hljs-string">&quot; &quot;</span><span class="hljs-attr">http</span>:<span class="hljs-comment">//hub-mirror.c.163.com&quot;&quot;]</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>3.可以到阿里云获取加速地址参考下面的链接内容</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-attr">https</span>:<span class="hljs-comment">//help.aliyun.com/zh/acr/user-guide/accelerate-the-pulls-of-docker-official-images</span><br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>获取到的链接跟上面操作一样,下面为我自己的链接</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript">vi /etc/docker/daemon.<span class="hljs-property">json</span><br>&#123;<br> <span class="hljs-string">&quot;registry-mirrors&quot;</span>: [<span class="hljs-string">&quot;https://bbqk8cc3.mirror.aliyuncs.com&quot;</span>]<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>4.设置完成之后启动docker</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">systemctl start docker  #启动docker<br>systemctl status docker   #查看docker服务启动状态<br></code></pre></td></tr></table></figure>
+
+<p>5.搜索并拉取dvwa镜像</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">docker search dvwa    #搜索dvwa镜像<br>docker pull sagikazarmark/dvwa    #拉取镜像<br>docker images   #查看docker镜像，确认dvwa是否拉取成功<br>docker run --name dvwa -p 1000:80 sagikazarmark/dvwa <br></code></pre></td></tr></table></figure>
+
+<p>以下是这条命令的详细解释：</p>
+<blockquote>
+<ul>
+<li>docker run：这是在Docker环境中运行容器的命令。</li>
+<li>–name dvwa：这是为容器指定一个名称。这将在Docker环境中创建一个名为dvwa的容器实例。</li>
+<li>-p 1000:80：这是将主机的端口1000映射到容器的端口80。这意味着当你在主机上访问(虚拟机IP)localhost:1000时，实际上是在访问容器中的服务，该服务正在监听80端口。</li>
+<li>sagikazarmark&#x2F;dvwa：这是指明要使用的Docker镜像的名称。</li>
+<li>这个命令将启动一个新的Docker容器，并使用提供的参数进行配置。容器将在后台运行，直到被显式停止或重启。如果您想要查看容器的状态，可以使用docker ps命令。</li>
+</ul>
+</blockquote>
+<p>6.查看虚拟机的IPb并访问测试</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">ip addr   我的虚拟机网卡：ens33 IP：192.168.77.136/24<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>主机访问192.168.77.136:1000即可</p>
+<p>登录dvwa，用户名：admin 密码：password 并初始化数据库即可开始使用</p>
+</blockquote>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2024/01/06/Linux%E5%AE%89%E8%A3%85%E5%B9%B6%E9%85%8D%E7%BD%AEdocke%E5%8A%A0%E9%80%9F%E9%95%9C%E5%83%8F/">← 下一篇 Linux安装并配置Docker加速镜像</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2023/12/10/SYCTF%E5%AE%98%E6%96%B9WP/">SYCTF官方WP 上一篇 →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="文章目录">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="切换主题"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/img/Liu.png" alt="Logo"></a><h1 id="Dr"><a href="/">Liu</a></h1><div id="description"><p>你好，我是Liu，一个热爱学习和探索的人。</p></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87"><span class="toc-number">1.</span> <span class="toc-text">前期准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD-%E9%95%9C%E5%83%8F%E6%BA%90%E9%93%BE%E6%8E%A5"><span class="toc-number">2.</span> <span class="toc-text">下载&amp;镜像源链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%B9%B6%E9%85%8D%E7%BD%AEdocker"><span class="toc-number">3.</span> <span class="toc-text">安装并配置docker</span></a></li></ol></div></div><footer><nobr><span class="icp-title">ICP</span><a class="icp-content" target="_blank" rel="noopener" href="https://beian.miit.gov.cn/">皖ICP备2023022708号-1</a></nobr><br><nobr><span class="icp-title">©</span><span class="icp-content">2023-2024</span></nobr><br><nobr>构建自 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> 使用主题 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> 主题作者 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>
