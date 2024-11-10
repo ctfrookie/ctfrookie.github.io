@@ -103,19 +103,11 @@
     </main>
     <script>
         function getIP(json) {
-            // 确保 json 对象包含 ip 属性
-            if (json && json.ip) {
-                document.getElementById("ip").innerHTML = json.data;
-            } else {
-                console.error('无法获取 IP 地址');
-            }
+            document.getElementById("ip").innerHTML = json.ip;
         }
 
-        // 创建一个新的 script 元素
         var script = document.createElement('script');
-        // 设置 script 的 src 属性，移除了多余的 ip 参数
         script.src = 'https://www.ipplus360.com/getIP';
-        // 将 script 元素添加到文档的 head 中
         document.head.appendChild(script);
     </script>
 
