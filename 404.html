@@ -94,7 +94,7 @@
         <div id="error">
             <h1>重大事件：404</h1>
             <h2 style="text-align: left;">404 NOT FOUND</h2>
-            <h2>您的IP地址是：<span id="ip"></span></h2>
+            <h2><span id="ip"></span></h2>
             <p style="text-align: left;">
                 <a href="/">首页</a>
                 <a onClick="history.back();">上一页</a>
@@ -102,13 +102,22 @@
         </div>
     </main>
     <script>
-        function getIP(json) {
-            document.getElementById("ip").innerHTML = json.ip;
-        }
-
-        var script = document.createElement('script');
-        script.src = 'https://www.ipplus360.com/getIP';
-        document.head.appendChild(script);
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'https://myip.ipip.net/json', true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4) {
+                var response = JSON.parse(xhr.responseText);
+                if (response.ret === "ok") {
+                    var ipData = response.data;
+                    var ipInfo = "IP: " + ipData.ip + "<br>" +
+                        "Location: " + ipData.location.join(', ');
+                    document.getElementById("ip").innerHTML = ipInfo;
+                } else {
+                    console.error('There was a problem with the request.');
+                }
+            }
+        };
+        xhr.send();
     </script>
 
 
