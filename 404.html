@@ -21,19 +21,16 @@
         html,
         body {
             height: 100%;
-        }
-        
-        body {
             margin: 0;
-            color: #FFF;
-            background-color: #141516;
-            background-position: 50% 50%;
-            background-repeat: no-repeat;
-            background-image: url(https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg);
+            color: #00FFFF;
+            /* 蓝色文字 */
+            background-color: #020024;
+            /* 深蓝色背景 */
         }
         
         main {
             text-align: center;
+            padding-top: 20%;
         }
         
         #logo {
@@ -43,6 +40,8 @@
         
         #logo img {
             width: 300px;
+            filter: hue-rotate(180deg) brightness(0.8);
+            /* 调整图片色调为蓝色 */
         }
         
         #error {
@@ -51,25 +50,31 @@
         }
         
         #error a {
-            color: #2BF;
+            color: #00BFFF;
+            /* 浅蓝色链接 */
             padding: 3px 10px;
             font-size: larger;
             text-decoration: none;
+            border: 1px solid #00BFFF;
+            /* 链接边框 */
         }
         
         #error a:hover {
             color: #000;
-            background-color: #2BF;
+            background-color: #00BFFF;
         }
         
         h1 {
             font-size: 60px;
-            color: #FE2;
+            color: #00BFFF;
+            /* 蓝色标题 */
         }
         
         h2 {
             font-size: 32px;
-            font-family: "JetBrains Mono";
+            font-family: 'JetBrains Mono', monospace;
+            color: #00FFFF;
+            /* 蓝色副标题 */
         }
         
         @media (max-width: 768px) {
@@ -119,9 +124,6 @@
         };
         xhr.send();
     </script>
-
-
-
 </body>
 
 </html>
