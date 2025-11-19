@@ -1,0 +1,149 @@
+<!DOCTYPE html><html lang="zh-cn" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>LitCTF2024公开赛道 | CTFrookie</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.woff2"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><meta name="page-config" content="{&quot;code_fold&quot;:null}"><script class="pjax-js">var config = {"root":"/","search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 - $1 行","copy":"复制"}};
+var page_config = {
+  code_fold: null
+};
+function updatePageConfig() {
+  var newPageConfig = document.querySelector('meta[name="page-config"]');
+  if (newPageConfig) {
+    page_config = JSON.parse(newPageConfig.content);
+  }
+}
+document.addEventListener('pjax:complete', function() { updatePageConfig(); });
+updatePageConfig();</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="//unpkg.com/mermaid@10.5.0/dist/mermaid.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js"></script><script>MathJax.Hub.Config({
+ menuSettings: {
+   zoom: "None"
+ },
+ showMathMenu: false,
+ jax: ["input/TeX","output/CommonHTML"],
+ extensions: ["tex2jax.js"],
+ TeX: {
+   extensions: ["AMSmath.js","AMSsymbols.js"],
+   equationNumbers: {
+     autoNumber: "AMS"
+   }
+ },
+ tex2jax: {
+   inlineMath: [["\\(", "\\)"]],
+   displayMath: [["\\[", "\\]"]]
+ }
+});</script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('/img/bg.jpg');
+ --light-background: url('https://api.tanmantang.com/api/mc');
+ --theme-encrypt-confirm: '确认'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js"></script><script>MathJax.Hub.Config({
+  menuSettings: {
+    zoom: "None"
+  },
+  showMathMenu: false,
+  jax: ["input/TeX","output/CommonHTML"],
+  extensions: ["tex2jax.js"],
+  TeX: {
+    extensions: ["AMSmath.js","AMSsymbols.js"],
+    equationNumbers: {
+      autoNumber: "AMS"
+    }
+  },
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]]
+  }
+});
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.vercount','meta[name=page-config]'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><script class="pjax-js">reset= () => {MathJax.Hub.Queue(["Typeset", MathJax.Hub]);document.querySelector('.lg-container')?.remove()
+const postBg = document.querySelector('#post-bg');
+if (postBg) lightGallery(postBg, {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.vercount','meta[name=page-config]'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem"><a class="navBlock" href="/Links/"><span class="navItemTitle">Links</span></a></li><li class="navItem"><a class="navBlock" href="/CTFEvents/"><span class="navItemTitle">CTFEvents</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/tools/"><span class="navItemTitle">Tools</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>LitCTF2024公开赛道</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2024-06-03T09:44:22.000Z" id="date"> 2024-06-03</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2025-11-19T05:25:29.582Z" id="updated"> 2025-11-19</time></div></span></div></div><hr><div id="post-content"><h1 id="LitCTF-2024（公开赛道）"><a href="#LitCTF-2024（公开赛道）" class="headerlink" title="LitCTF 2024（公开赛道）"></a><strong>LitCTF 2024（公开赛道）</strong></h1><h2 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h2><h3 id="涐贪恋和伱、甾―⑺de毎兮毎秒"><a href="#涐贪恋和伱、甾―⑺de毎兮毎秒" class="headerlink" title="涐贪恋和伱、甾―⑺dé毎兮毎秒"></a>涐贪恋和伱、甾―⑺dé毎兮毎秒</h3><p class='item-img' data-src='/LitCTF2024.assets/image-20240601172939258.png'><img src="/LitCTF2024.assets/image-20240601172939258.png" alt="image-20240601172939258"></p>
+<h3 id="你说得对，但"><a href="#你说得对，但" class="headerlink" title="你说得对，但__"></a>你说得对，但__</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">┌──(kali㉿kali)-[~/Desktop]</span><br><span class="line">└─$ foremost 1.png</span><br></pre></td></tr></table></figure>
+
+<p>拼接二维码即可</p>
+<p class='item-img' data-src='/LitCTF2024.assets/image-20240601173147309.png'><img src="/LitCTF2024.assets/image-20240601173147309.png" alt="image-20240601173147309"></p>
+<h3 id="原铁，启动！"><a href="#原铁，启动！" class="headerlink" title="原铁，启动！"></a>原铁，启动！</h3><p>原神：</p>
+<p class='item-img' data-src='/LitCTF2024.assets/QQ%E6%88%AA%E5%9B%BE20240601120816.png'><img src="/LitCTF2024.assets/QQ%E6%88%AA%E5%9B%BE20240601120816.png" alt="QQ截图20240601120816"></p>
+<p>星铁：</p>
+<p class='item-img' data-src='/LitCTF2024.assets/image-20240601173338688.png'><img src="/LitCTF2024.assets/image-20240601173338688.png" alt="image-20240601173338688"></p>
+<h3 id="盯帧珍珠"><a href="#盯帧珍珠" class="headerlink" title="盯帧珍珠"></a>盯帧珍珠</h3><p>wps图片打开一帧帧看</p>
+<p class='item-img' data-src='/LitCTF2024.assets/image-20240601173622957.png'><img src="/LitCTF2024.assets/image-20240601173622957.png" alt="image-20240601173622957"></p>
+<h3 id="Everywhere-We-Go"><a href="#Everywhere-We-Go" class="headerlink" title="Everywhere We Go"></a>Everywhere We Go</h3><p class='item-img' data-src='/LitCTF2024.assets/image-20240601173955186.png'><img src="/LitCTF2024.assets/image-20240601173955186.png" alt="image-20240601173955186"></p>
+<h3 id="The-love"><a href="#The-love" class="headerlink" title="The love"></a>The love</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">┌──(kali㉿kali)-[~/Desktop]</span><br><span class="line">└─$ foremost love.jpg  </span><br></pre></td></tr></table></figure>
+
+<p>拿到压缩包,得知密码为：<strong>Litctf??????ftctiL</strong></p>
+<p class='item-img' data-src='/LitCTF2024.assets/image-20240601174604514.png'><img src="/LitCTF2024.assets/image-20240601174604514.png" alt="image-20240601174604514"></p>
+<p>破解密码：<strong>Litctf202405ftctiL</strong></p>
+<p class='item-img' data-src='/LitCTF2024.assets/image-20240601174701886.png'><img src="/LitCTF2024.assets/image-20240601174701886.png" alt="image-20240601174701886"></p>
+<p>解压拿到一个密码：<strong>love_is_painful</strong></p>
+<p class='item-img' data-src='/LitCTF2024.assets/image-20240601175221927.png'><img src="/LitCTF2024.assets/image-20240601175221927.png" alt="image-20240601175221927"></p>
+<p>拿flag：<strong>Litctf{wish_you_can_find_your_true_love}</strong></p>
+<h3 id="女装照流量"><a href="#女装照流量" class="headerlink" title="女装照流量"></a>女装照流量</h3><p>全部导出</p>
+<p class='item-img' data-src='/LitCTF2024.assets/image-20240601175432670.png'><img src="/LitCTF2024.assets/image-20240601175432670.png" alt="image-20240601175432670"></p>
+<p>随便看看：</p>
+<p class='item-img' data-src='/LitCTF2024.assets/image-20240601175655702.png'><img src="/LitCTF2024.assets/image-20240601175655702.png" alt="image-20240601175655702"></p>
+<p>写一个解密脚本：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$p2a4445380b252</span> = <span class="string">&quot;Z2QzovUHJvZ3JhbSBGaWxlcy9waHBzdHVkeV9wcm8vV1dXL0xpdENURi1wY2FwbmcvZjFhZy56aXA=&quot;</span>;</span><br><span class="line"><span class="variable">$decoded_path</span> = <span class="title function_ invoke__">base64_decode</span>(<span class="title function_ invoke__">substr</span>(<span class="variable">$p2a4445380b252</span>, <span class="number">2</span>));</span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$decoded_path</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>把所有文件解密看得到flag压缩包密码：</p>
+<p class='item-img' data-src='/LitCTF2024.assets/image-20240601180202962.png'><img src="/LitCTF2024.assets/image-20240601180202962.png" alt="image-20240601180202962"></p>
+<p>找到压缩包文件把多余部分去掉改成zip格式：</p>
+<p class='item-img' data-src='/LitCTF2024.assets/image-20240601180422820.png'><img src="/LitCTF2024.assets/image-20240601180422820.png" alt="image-20240601180422820"></p>
+<p>提取获得flag：</p>
+<p class='item-img' data-src='/LitCTF2024.assets/image-20240601180335570.png'><img src="/LitCTF2024.assets/image-20240601180335570.png" alt="image-20240601180335570"></p>
+<h3 id="舔到最后应有尽有（赛后）"><a href="#舔到最后应有尽有（赛后）" class="headerlink" title="舔到最后应有尽有（赛后）"></a>舔到最后应有尽有（赛后）</h3><p>base64隐写，puzz秒了</p>
+<p class='item-img' data-src='/LitCTF2024.assets/image-20240601212641195.png'><img src="/LitCTF2024.assets/image-20240601212641195.png" alt="image-20240601212641195"></p>
+<h3 id="关键，太关键了-（赛后）"><a href="#关键，太关键了-（赛后）" class="headerlink" title="关键，太关键了!（赛后）"></a>关键，太关键了!（赛后）</h3><p>关键字KeywordCipher解密,密钥bingo</p>
+<p class='item-img' data-src='/LitCTF2024.assets/image-20240601222934617.png'><img src="/LitCTF2024.assets/image-20240601222934617.png" alt="image-20240601222934617"></p>
+<p class='item-img' data-src='/LitCTF2024.assets/image-20240601222849975.png'><img src="/LitCTF2024.assets/image-20240601222849975.png" alt="image-20240601222849975"></p>
+<p>[^CTFookie]: **LitCTF 2024（公开赛道）**Misc Writeup</p>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2024/10/05/baseCTF2024/">← 下一篇 BaseCTF2024</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2024/04/06/XYCTF-%E8%A7%A3%E9%A2%98%E6%A6%9C%E9%83%A8%E7%BD%B2/">XYCTF-解题榜部署 上一篇 →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="文章目录">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="切换主题"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/img/Liu.png" alt="Logo" style="margin:undefined;border-radius:undefined;"></a><h1 id="Dr"><a href="/">Liu</a></h1><div id="description"><p>你好，我是Liu，一个热爱学习和探索的人。</p></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#LitCTF-2024%EF%BC%88%E5%85%AC%E5%BC%80%E8%B5%9B%E9%81%93%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">LitCTF 2024（公开赛道）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Misc"><span class="toc-number">1.1.</span> <span class="toc-text">Misc</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B6%90%E8%B4%AA%E6%81%8B%E5%92%8C%E4%BC%B1%E3%80%81%E7%94%BE%E2%80%95%E2%91%BAde%E6%AF%8E%E5%85%AE%E6%AF%8E%E7%A7%92"><span class="toc-number">1.1.1.</span> <span class="toc-text">涐贪恋和伱、甾―⑺dé毎兮毎秒</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%A0%E8%AF%B4%E5%BE%97%E5%AF%B9%EF%BC%8C%E4%BD%86"><span class="toc-number">1.1.2.</span> <span class="toc-text">你说得对，但__</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E9%93%81%EF%BC%8C%E5%90%AF%E5%8A%A8%EF%BC%81"><span class="toc-number">1.1.3.</span> <span class="toc-text">原铁，启动！</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%AF%E5%B8%A7%E7%8F%8D%E7%8F%A0"><span class="toc-number">1.1.4.</span> <span class="toc-text">盯帧珍珠</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Everywhere-We-Go"><span class="toc-number">1.1.5.</span> <span class="toc-text">Everywhere We Go</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#The-love"><span class="toc-number">1.1.6.</span> <span class="toc-text">The love</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A5%B3%E8%A3%85%E7%85%A7%E6%B5%81%E9%87%8F"><span class="toc-number">1.1.7.</span> <span class="toc-text">女装照流量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%88%94%E5%88%B0%E6%9C%80%E5%90%8E%E5%BA%94%E6%9C%89%E5%B0%BD%E6%9C%89%EF%BC%88%E8%B5%9B%E5%90%8E%EF%BC%89"><span class="toc-number">1.1.8.</span> <span class="toc-text">舔到最后应有尽有（赛后）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E9%94%AE%EF%BC%8C%E5%A4%AA%E5%85%B3%E9%94%AE%E4%BA%86-%EF%BC%88%E8%B5%9B%E5%90%8E%EF%BC%89"><span class="toc-number">1.1.9.</span> <span class="toc-text">关键，太关键了!（赛后）</span></a></li></ol></li></ol></li></ol></div></div><footer><nobr><span class="icp-title">ICP</span><a class="icp-content" target="_blank" rel="noopener" href="https://beian.miit.gov.cn/">皖ICP备2023022708号-1</a></nobr><br><nobr><span class="icp-title">©</span><span class="icp-content">2023-2024</span></nobr><br><nobr>构建自 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> 使用主题 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> 主题作者 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas><script defer src="&lt;script charset=&quot;UTF-8&quot; id=&quot;LA_COLLECT&quot; src=&quot;//sdk.51.la/js-sdk-pro.min.js&quot;&gt;&lt;/script&gt;"></script><script defer src="&lt;script&gt;LA.init({id:&quot;3HQbQtTptnnrcizP&quot;,ck:&quot;3HQbQtTptnnrcizP&quot;,autoTrack:true})&lt;/script&gt;"></script><script defer src="&lt;script type=&quot;text/javascript&quot;&gt;(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src=&quot;https://www.clarity.ms/tag/&quot;+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, &quot;clarity&quot;, &quot;script&quot;, &quot;opl82iwvrr&quot;);&lt;/script&gt;"></script><script defer src="&lt;script type=&quot;text/javascript&quot;&gt; (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src=&quot;https://www.clarity.ms/tag/&quot;+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, &quot;clarity&quot;, &quot;script&quot;, &quot;oplkns4lor&quot;);&lt;/script&gt;"></script></body></html>

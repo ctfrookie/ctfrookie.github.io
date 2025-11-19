@@ -1,0 +1,231 @@
+<!DOCTYPE html><html lang="zh-cn" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>SYCTF官方WP | CTFrookie</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.woff2"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><meta name="page-config" content="{&quot;code_fold&quot;:null}"><script class="pjax-js">var config = {"root":"/","search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 - $1 行","copy":"复制"}};
+var page_config = {
+  code_fold: null
+};
+function updatePageConfig() {
+  var newPageConfig = document.querySelector('meta[name="page-config"]');
+  if (newPageConfig) {
+    page_config = JSON.parse(newPageConfig.content);
+  }
+}
+document.addEventListener('pjax:complete', function() { updatePageConfig(); });
+updatePageConfig();</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="//unpkg.com/mermaid@10.5.0/dist/mermaid.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js"></script><script>MathJax.Hub.Config({
+ menuSettings: {
+   zoom: "None"
+ },
+ showMathMenu: false,
+ jax: ["input/TeX","output/CommonHTML"],
+ extensions: ["tex2jax.js"],
+ TeX: {
+   extensions: ["AMSmath.js","AMSsymbols.js"],
+   equationNumbers: {
+     autoNumber: "AMS"
+   }
+ },
+ tex2jax: {
+   inlineMath: [["\\(", "\\)"]],
+   displayMath: [["\\[", "\\]"]]
+ }
+});</script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('/img/bg.jpg');
+ --light-background: url('https://api.tanmantang.com/api/mc');
+ --theme-encrypt-confirm: '确认'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js"></script><script>MathJax.Hub.Config({
+  menuSettings: {
+    zoom: "None"
+  },
+  showMathMenu: false,
+  jax: ["input/TeX","output/CommonHTML"],
+  extensions: ["tex2jax.js"],
+  TeX: {
+    extensions: ["AMSmath.js","AMSsymbols.js"],
+    equationNumbers: {
+      autoNumber: "AMS"
+    }
+  },
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]]
+  }
+});
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.vercount','meta[name=page-config]'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><script class="pjax-js">reset= () => {MathJax.Hub.Queue(["Typeset", MathJax.Hub]);document.querySelector('.lg-container')?.remove()
+const postBg = document.querySelector('#post-bg');
+if (postBg) lightGallery(postBg, {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.vercount','meta[name=page-config]'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem"><a class="navBlock" href="/Links/"><span class="navItemTitle">Links</span></a></li><li class="navItem"><a class="navBlock" href="/CTFEvents/"><span class="navItemTitle">CTFEvents</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/tools/"><span class="navItemTitle">Tools</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>SYCTF官方WP</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2023-12-10T00:53:00.000Z" id="date"> 2023-12-10</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2025-11-19T05:25:29.582Z" id="updated"> 2025-11-19</time></div></span></div></div><hr><div id="post-content"><h1 id="SYCTF-官方WP"><a href="#SYCTF-官方WP" class="headerlink" title="SYCTF 官方WP"></a>SYCTF 官方WP</h1><h2 id="MISC"><a href="#MISC" class="headerlink" title="MISC"></a>MISC</h2><h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><p>#W1ndys#</p>
+<p>暴力破解压缩包密码得到</p>
+<p class='item-img' data-src='/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.001.png'><img src="/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.001.png"></p>
+<p>丢进winhex看一下</p>
+<p class='item-img' data-src='/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.002.png'><img src="/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.002.png"></p>
+<p>看可以看到IHDR判断为png文件，先把png文件后缀补全，发现缺少了文件头</p>
+<p>补全文件头即可，可以手搓，也可以工具梭哈</p>
+<p class='item-img' data-src='/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.003.png'><img src="/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.003.png"></p>
+<p>联系题目得知盲水印拿到flag</p>
+<p class='item-img' data-src='/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.004.png'><img src="/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.004.png"></p>
+<h3 id="MISC签到"><a href="#MISC签到" class="headerlink" title="MISC签到"></a>MISC签到</h3><p>下载附件得到一个exe文件</p>
+<p class='item-img' data-src='/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.005.png'><img src="/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.005.png"></p>
+<p>双击打开弹出一个框，</p>
+<p class='item-img' data-src='/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.006.png'><img src="/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.006.png"></p>
+<p>输入1返回1 ，尝试输入flag得到flag{acnbjksbjkvbujsewbuo}</p>
+<p class='item-img' data-src='/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.007.png'><img src="/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.007.png"></p>
+<h3 id="小鲨鱼"><a href="#小鲨鱼" class="headerlink" title="小鲨鱼"></a>小鲨鱼</h3><p>下载附件得到一个名为shark.pcapng的流量包，放进wireshark中打开</p>
+<p class='item-img' data-src='/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.008.png'><img src="/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.008.png"></p>
+<p>通过搜索字符串得到flag:CTF{Liu_Ye_De_Kui_Zeng}</p>
+<h3 id="Steg"><a href="#Steg" class="headerlink" title="Steg"></a>Steg</h3><p>下载附件得到一个名字为steg的文件，没有后缀名，将其拖入kali中用file命令查询其文件属性</p>
+<p class='item-img' data-src='/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.009.png'><img src="/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.009.png"></p>
+<p>可以看到是一个zip文件</p>
+<p>将其改为zip文件后打开发现一张图片和一个密钥</p>
+<p>对key进行解密得到key&#x3D;123456</p>
+<p class='item-img' data-src='/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.010.png'><img src="/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.010.png"></p>
+<p>根据题目名以及有key判断为steghide加密</p>
+<p class='item-img' data-src='/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.011.png'><img src="/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.011.png"></p>
+<p>得到flag:SYCTF{steg_hide_!!!}</p>
+<h3 id="Oursercet"><a href="#Oursercet" class="headerlink" title="Oursercet"></a>Oursercet</h3><p>下载附件里卖弄有一张图片和一个txt文件</p>
+<p class='item-img' data-src='/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.012.png'><img src="/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.012.png"></p>
+<p>文本文件中的密文为莫斯电码，对其解密</p>
+<p class='item-img' data-src='/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.013.png'><img src="/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.013.png"></p>
+<p>由题目名联想到可能为oursercet加密，将其放入软件中，输入123456得到flag.txt</p>
+<p class='item-img' data-src='/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.014.png'><img src="/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.014.png"></p>
+<p>flag:flag{2cf95c04-fa7f-4014-8de7-9f331352696d}</p>
+<h2 id="CRYPTO"><a href="#CRYPTO" class="headerlink" title="CRYPTO"></a>CRYPTO</h2><h3 id="Rot"><a href="#Rot" class="headerlink" title="Rot"></a>Rot</h3><h5 id="W1ndys✌"><a href="#W1ndys✌" class="headerlink" title="W1ndys✌"></a>W1ndys✌</h5><p>70 76 80 71 83 123 108 97 82 113 73 57 45 84 101 73 70 113 72 45 65 108 71 68 48 115 45 97 57 83 120 97 75 45 90 125</p>
+<p>十进制ASCII码转字符串</p>
+<p>FLPGS{laRqI9-TeIFqH-AlGD0s-a9SxaK-Z}</p>
+<p>rot13解密</p>
+<p>SYCTF{ynEdV9-GrVSdU-NyTQ0f-n9FknX-M}</p>
+<h3 id="凯撒大帝又爱又恨的培根"><a href="#凯撒大帝又爱又恨的培根" class="headerlink" title="凯撒大帝又爱又恨的培根"></a>凯撒大帝又爱又恨的培根</h3><h5 id="W1ndys✌-1"><a href="#W1ndys✌-1" class="headerlink" title="W1ndys✌"></a>W1ndys✌</h5><p>BABAB AAAAB AABAB BABBA ABAAA  AABBB AABBB BABAB AABBA AABAB BBAAA ABBAA BBAAA AAAAB AAAAB</p>
+<p>培根解密</p>
+<p>vbfwihhvgfymybb</p>
+<p>凯撒解密</p>
+<p>key1 #3: syctfeesdcvjvyy</p>
+<p>flag提交格式为SYCTF{小写字符串}</p>
+<p>SYCTF{eesdcvjvyy}</p>
+<h3 id="CRYPTO签到"><a href="#CRYPTO签到" class="headerlink" title="CRYPTO签到"></a>CRYPTO签到</h3><h5 id="W1ndys✌-2"><a href="#W1ndys✌-2" class="headerlink" title="W1ndys✌"></a>W1ndys✌</h5><p>熊出没，就是熊菲特密码咯（埃特巴什码）</p>
+<p>SYCTF{CRYPTO_IS_SO_EASY}</p>
+<h3 id="你知道异或吗"><a href="#你知道异或吗" class="headerlink" title="你知道异或吗"></a>你知道异或吗</h3><p>根据题目提示再结合题目名称，得到可能为xor50加密</p>
+<p>下载附件</p>
+<p class='item-img' data-src='/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.015.png'><img src="/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.015.png"></p>
+<p>可以看到有乱码</p>
+<p>直接用脚本读取文件内容进行解密</p>
+<p class='item-img' data-src='/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.016.png'><img src="/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.016.png"></p>
+<p class='item-img' data-src='/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.017.png'><img src="/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.017.png"></p>
+<p>SYCTF{vl2pre-KYDkvs-UPc6L0-tfwVlr-9}</p>
+<p>exp:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 打开文件</span></span><br><span class="line">with open(<span class="string">&#x27;xor.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>) as f:</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"><span class="comment"># 读取文件内容</span></span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">content = f.read()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将字符串转换为字节数组</span></span><br><span class="line">byte\_array = bytearray(content, <span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 逐个字节进行xor50解密</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(byte\_array)):</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">byte\_array[i] ^= 50</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将解密后的字节数组转换为字符串</span></span><br><span class="line">decrypted\_content = str(byte\_array, <span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打印解密后的内容</span></span><br><span class="line"><span class="built_in">print</span>(decrypted\_content)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="md5"><a href="#md5" class="headerlink" title="md5"></a>md5</h3><p>下载附件得到</p>
+<p class='item-img' data-src='/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.018.png'><img src="/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.018.png"></p>
+<p>判断为md5爆破</p>
+<p>将所给数据放入脚本中</p>
+<p class='item-img' data-src='/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.019.png'><img src="/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.019.png"></p>
+<p>得到原始md5值</p>
+<p class='item-img' data-src='/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.020.png'><img src="/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.020.png"></p>
+<p>将原始md5值用SYCTF{}包裹起来得到flag:SYCTF{F0AF1443B1F463EAFFF7AEBB8B2AC4E6}</p>
+<h2 id="WEB"><a href="#WEB" class="headerlink" title="WEB"></a>WEB</h2><h3 id="签到"><a href="#签到" class="headerlink" title="签到"></a>签到</h3><p>打开url，页面只有一串字符</p>
+<p class='item-img' data-src='/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.021.png'><img src="/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.021.png"></p>
+<p>查看源代码发现flag:SYCTF{d94e9772-a3fb-4e6e-90be-d907c3a7c142}</p>
+<p class='item-img' data-src='/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.022.png'><img src="/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.022.png"></p>
+<h3 id="宝宝巴士"><a href="#宝宝巴士" class="headerlink" title="宝宝巴士"></a>宝宝巴士</h3><p class='item-img' data-src='/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.023.png'><img src="/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.023.png"></p>
+<p>打开发现如上代码，可以看到cat&#x2F;tac,flag和空格被过滤了，用uniq，fla?,%09尝试绕过</p>
+<p>payload:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">?rce=<span class="built_in">ls</span>%09/</span><br><span class="line"></span><br><span class="line">?rce=<span class="built_in">uniq</span>%09/fla?</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>拼接url得到flag:SYCTF{01b5542f-8c68-41b5-9038-3a2dc1663886}</p>
+<p class='item-img' data-src='/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.024.png'><img src="/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.024.png"></p>
+<h3 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h3><p>打开可以看到需要登录</p>
+<p class='item-img' data-src='/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.025.png'><img src="/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.025.png"></p>
+<p>点击登录跳转到登录框页面</p>
+<p class='item-img' data-src='/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.026.png'><img src="/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.026.png"></p>
+<p>尝试弱口令:admin，password登录，得到flag: SYCTF{98972343-7e94-4a04-ade4-28a446a2f996}</p>
+<p class='item-img' data-src='/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.027.png'><img src="/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.027.png"></p>
+<h3 id="Rce"><a href="#Rce" class="headerlink" title="Rce"></a>Rce</h3><p>打开地址得到</p>
+<p class='item-img' data-src='/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.028.png'><img src="/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.028.png"></p>
+<p>可以看到过滤了flag，php，file这几个字符，尝试绕过</p>
+<p>payload:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">?c=system(<span class="string">&quot;cat fl\#&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>url拼接上payload得到flag:SYCTF{Web_1_0Wo_Bu_Hui}</p>
+<p class='item-img' data-src='/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.029.png'><img src="/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.029.png"></p>
+<h2 id="PWN"><a href="#PWN" class="headerlink" title="PWN"></a>PWN</h2><h3 id="NC"><a href="#NC" class="headerlink" title="NC"></a>NC</h3><p>使用nc工具连接服务器之后 ls查看文件列表 cat flag 查看flag</p>
+<p class='item-img' data-src='/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.030.png'><img src="/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.030.png"></p>
+<h2 id="REVERSE"><a href="#REVERSE" class="headerlink" title="REVERSE"></a>REVERSE</h2><h3 id="RE签到"><a href="#RE签到" class="headerlink" title="RE签到"></a>RE签到</h3><p>下载附件得到一个exe文件</p>
+<p class='item-img' data-src='/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.031.png'><img src="/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.031.png"></p>
+<p>双击无法打开，尝试命令行.&#x2F;打开，得到flag:ISCTF{873c-298c-2948-23bh-291h-kt30}</p>
+<p class='item-img' data-src='/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.032.png'><img src="/images/Aspose.Words.66026548-9443-44f1-b518-7d7cfda5760e.032.png"></p>
+<h3 id="01"><a href="#01" class="headerlink" title="01"></a>01</h3><p>程序逻辑:将flag异或“随机数”后得到正确flag，再直接与输入比较。</p>
+<p>只要srand的参数确定了，一系列rand()返回值都能确定。其中flag原值可通过IDA Pro的LazyIDA一键导出（需要另行安装）。</p>
+<p>exp:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;cstdlib&gt;</span></span><br><span class="line"><span class="comment">#include &lt;cstdio&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line">char flag[]=&#123;0xa1,0x7c,0x7a,0xb2,0x13,0x68,0x28,0xe5,0x25,0x5,0xca,0x8c,0xce,0x7f,0xf3,0xaa,0x50,0x5a,0x50,0x63,0x17,0x5b,0x18,0xd7,0x51,0xae,0x14,0x87,0x7f,0x7f,0x79,0xa4,0xc4,0x24,0xa7,0x89,0xa4,0xab,0x4b,0xae,0xb8,0x06,0xdf&#125;;</span><br><span class="line">int main(void)&#123;</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">srand(0xDEADC0DE);</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"><span class="keyword">for</span>(int i=0;i&lt;43;i++)</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>,flag[i]^(rand()&amp;0xFF));</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"><span class="built_in">return</span> 0;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="02"><a href="#02" class="headerlink" title="02"></a>02</h3><p>Go语言代码阅读题，加密逻辑:flag先异或0x9C，再经过换表Base64后转十六进制。</p>
+<p>异或解密:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">enc=[0xf7,0xce,0xde,0xaf,0xf0,0xa8,0xec,0xc4,0xf4,0xa8,0xf3,0xce,0xff,0xe6,0xf3,0xd2,0xf9,0xaf,0xff,0xd6,0xfb,0xcc,0xeb,0xc8,0xfb,0xe5,0xcd,0xcd,0xf8,0xe6,0xef,0xd3,0xfe,0xf6,0xff,0xcc,0xfb,0xcd,0xa8,0xd6,0xf8,0xcc,0xf7,0xd3,0xf8,0xcd,0xff,0xcc,0xf4,0xaf,0xf8,0xaa,0xf8,0xdd,0xf7,0xce,0xea,0xfb,0xa1,0xa1]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(enc)):</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">enc[i]^=0x9c</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"><span class="built_in">print</span>(chr(enc[i]),end=<span class="string">&#x27;&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>CyberChef脚本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">From\_Hex(<span class="string">&#x27;Auto&#x27;</span>)</span><br><span class="line">From\_Base64(<span class="string">&#x27;0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+/=&#x27;</span>,<span class="literal">true</span>,<span class="literal">false</span>)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="03"><a href="#03" class="headerlink" title="03"></a>03</h3><p>用jadx打开，发现为AES加密，其中密钥为“SYCTF2023yyds666”，密文在flag数组中。解密exp:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import java.security.\#;</span><br><span class="line">import javax.crypto.\#;</span><br><span class="line">import javax.crypto.spec.SecretKeySpec;</span><br><span class="line">import java.math.BigInteger;</span><br><span class="line">public class exp&#123;</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">public static void main(String[]args)&#123;</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">byte[] flag=new byte[]&#123;0x4, (byte) 0xe0, (byte) 0xc7,0x4c,</span><br><span class="line">  (byte) 0x92, (byte) 0x89,0x60,0x18, (byte) 0xe3,0x3c, (byte) 0xa0,0x75,</span><br><span class="line">  (byte) 0xa2,0x13,0x51,0x68, (byte) 0x93, (byte) 0xd4, (byte) 0xda,0x3b,</span><br><span class="line">  0x47,0x3e,0x0, (byte) 0x94,0x59, (byte) 0x9f, (byte) 0xd4,0x41,0xa, (byte) 0xf7,</span><br><span class="line">  (byte) 0xdd, (byte) 0xe8, (byte) 0x80,0x37,0x3c,0x6d, (byte) 0xd9, (byte) 0xee,</span><br><span class="line">  (byte) 0xb8, (byte) 0x80,0x6e, (byte) 0xcd,0x0, (byte) 0xbc,0x1b,0x1c,0x35,0x76&#125;;</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">String key=<span class="string">&quot;SYCTF2023yyds666&quot;</span>;</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">byte[] decryptData=DecryptAES(key,flag);</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">System.out.println(new String(decryptData));</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">private static byte[] DecryptAES(String key,byte[] data)&#123;</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">try&#123;</span><br><span class="line"></span><br><span class="line">            </span><br><span class="line">SecretKey secretKey=new SecretKeySpec(key.getBytes(),<span class="string">&quot;AES&quot;</span>);</span><br><span class="line"></span><br><span class="line">            </span><br><span class="line">Cipher cipher=Cipher.getInstance(<span class="string">&quot;AES/ECB/PKCS5Padding&quot;</span>);</span><br><span class="line"></span><br><span class="line">            </span><br><span class="line">cipher.init(Cipher.DECRYPT\_MODE,secretKey);</span><br><span class="line"></span><br><span class="line">            </span><br><span class="line"><span class="built_in">return</span> cipher.doFinal(data);</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">catch(Exception e)&#123;</span><br><span class="line"></span><br><span class="line">            </span><br><span class="line">e.printStackTrace();</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line"><span class="built_in">return</span> new byte[]&#123;0&#125;;</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">&#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>也可以用赛博厨子做:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input:04e0c74c92896018e33ca075a213516893d4da3b473e0094599fd4410af7dde880373c6dd9eeb8806ecd00bc1b1c3576</span><br><span class="line">AES\_Decrypt(&#123;<span class="string">&#x27;option&#x27;</span>:<span class="string">&#x27;UTF8&#x27;</span>,<span class="string">&#x27;string&#x27;</span>:<span class="string">&#x27;SYCTF2023yyds666&#x27;</span>&#125;,&#123;<span class="string">&#x27;option&#x27;</span>:<span class="string">&#x27;Hex&#x27;</span>,<span class="string">&#x27;string&#x27;</span>:<span class="string">&#x27;&#x27;</span>&#125;,<span class="string">&#x27;ECB/NoPadding&#x27;</span>,<span class="string">&#x27;Hex&#x27;</span>,<span class="string">&#x27;Raw&#x27;</span>,&#123;<span class="string">&#x27;option&#x27;</span>:<span class="string">&#x27;Hex&#x27;</span>,<span class="string">&#x27;string&#x27;</span>:<span class="string">&#x27;&#x27;</span>&#125;,&#123;<span class="string">&#x27;option&#x27;</span>:<span class="string">&#x27;Hex&#x27;</span>,<span class="string">&#x27;string&#x27;</span>:<span class="string">&#x27;&#x27;</span>&#125;)</span><br><span class="line">Output:SYCTF&#123;CE07DDE4-A771-8499-56A8-49AC9D04817F&#125;.....</span><br></pre></td></tr></table></figure><div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2024/01/06/Ubuntu-Server%E4%BD%BF%E7%94%A8Docker%E5%AE%B9%E5%99%A8%E5%BF%AB%E9%80%9F%E5%88%9B%E5%BB%BADWVA%E9%9D%B6%E5%9C%BA/">← 下一篇 Ubuntu Server使用Docker容器快速创建DVWA靶场</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2023/12/02/ISCTF-MISC-%E5%B0%8F%E8%93%9D%E9%B2%A8%E7%9A%84%E7%A7%98%E5%AF%86/">ISCTF-MISC-小蓝鲨的秘密 上一篇 →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="文章目录">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="切换主题"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/img/Liu.png" alt="Logo" style="margin:undefined;border-radius:undefined;"></a><h1 id="Dr"><a href="/">Liu</a></h1><div id="description"><p>你好，我是Liu，一个热爱学习和探索的人。</p></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#SYCTF-%E5%AE%98%E6%96%B9WP"><span class="toc-number">1.</span> <span class="toc-text">SYCTF 官方WP</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#MISC"><span class="toc-number">1.1.</span> <span class="toc-text">MISC</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E7%89%87"><span class="toc-number">1.1.1.</span> <span class="toc-text">图片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MISC%E7%AD%BE%E5%88%B0"><span class="toc-number">1.1.2.</span> <span class="toc-text">MISC签到</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E9%B2%A8%E9%B1%BC"><span class="toc-number">1.1.3.</span> <span class="toc-text">小鲨鱼</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Steg"><span class="toc-number">1.1.4.</span> <span class="toc-text">Steg</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Oursercet"><span class="toc-number">1.1.5.</span> <span class="toc-text">Oursercet</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CRYPTO"><span class="toc-number">1.2.</span> <span class="toc-text">CRYPTO</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Rot"><span class="toc-number">1.2.1.</span> <span class="toc-text">Rot</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#W1ndys%E2%9C%8C"><span class="toc-number">1.2.1.0.1.</span> <span class="toc-text">W1ndys✌</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%AF%E6%92%92%E5%A4%A7%E5%B8%9D%E5%8F%88%E7%88%B1%E5%8F%88%E6%81%A8%E7%9A%84%E5%9F%B9%E6%A0%B9"><span class="toc-number">1.2.2.</span> <span class="toc-text">凯撒大帝又爱又恨的培根</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#W1ndys%E2%9C%8C-1"><span class="toc-number">1.2.2.0.1.</span> <span class="toc-text">W1ndys✌</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CRYPTO%E7%AD%BE%E5%88%B0"><span class="toc-number">1.2.3.</span> <span class="toc-text">CRYPTO签到</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#W1ndys%E2%9C%8C-2"><span class="toc-number">1.2.3.0.1.</span> <span class="toc-text">W1ndys✌</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%A0%E7%9F%A5%E9%81%93%E5%BC%82%E6%88%96%E5%90%97"><span class="toc-number">1.2.4.</span> <span class="toc-text">你知道异或吗</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#md5"><span class="toc-number">1.2.5.</span> <span class="toc-text">md5</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WEB"><span class="toc-number">1.3.</span> <span class="toc-text">WEB</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AD%BE%E5%88%B0"><span class="toc-number">1.3.1.</span> <span class="toc-text">签到</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9D%E5%AE%9D%E5%B7%B4%E5%A3%AB"><span class="toc-number">1.3.2.</span> <span class="toc-text">宝宝巴士</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%99%BB%E5%BD%95"><span class="toc-number">1.3.3.</span> <span class="toc-text">登录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Rce"><span class="toc-number">1.3.4.</span> <span class="toc-text">Rce</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PWN"><span class="toc-number">1.4.</span> <span class="toc-text">PWN</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#NC"><span class="toc-number">1.4.1.</span> <span class="toc-text">NC</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#REVERSE"><span class="toc-number">1.5.</span> <span class="toc-text">REVERSE</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#RE%E7%AD%BE%E5%88%B0"><span class="toc-number">1.5.1.</span> <span class="toc-text">RE签到</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#01"><span class="toc-number">1.5.2.</span> <span class="toc-text">01</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#02"><span class="toc-number">1.5.3.</span> <span class="toc-text">02</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#03"><span class="toc-number">1.5.4.</span> <span class="toc-text">03</span></a></li></ol></li></ol></li></ol></div></div><footer><nobr><span class="icp-title">ICP</span><a class="icp-content" target="_blank" rel="noopener" href="https://beian.miit.gov.cn/">皖ICP备2023022708号-1</a></nobr><br><nobr><span class="icp-title">©</span><span class="icp-content">2023-2024</span></nobr><br><nobr>构建自 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> 使用主题 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> 主题作者 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas><script defer src="&lt;script charset=&quot;UTF-8&quot; id=&quot;LA_COLLECT&quot; src=&quot;//sdk.51.la/js-sdk-pro.min.js&quot;&gt;&lt;/script&gt;"></script><script defer src="&lt;script&gt;LA.init({id:&quot;3HQbQtTptnnrcizP&quot;,ck:&quot;3HQbQtTptnnrcizP&quot;,autoTrack:true})&lt;/script&gt;"></script><script defer src="&lt;script type=&quot;text/javascript&quot;&gt;(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src=&quot;https://www.clarity.ms/tag/&quot;+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, &quot;clarity&quot;, &quot;script&quot;, &quot;opl82iwvrr&quot;);&lt;/script&gt;"></script><script defer src="&lt;script type=&quot;text/javascript&quot;&gt; (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src=&quot;https://www.clarity.ms/tag/&quot;+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, &quot;clarity&quot;, &quot;script&quot;, &quot;oplkns4lor&quot;);&lt;/script&gt;"></script></body></html>

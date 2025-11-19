@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新年祝福</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            background-color: rgb(255, 0, 0);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+    <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+    <script>LA.init({id:"3HQbQtTptnnrcizP",ck:"3HQbQtTptnnrcizP"})</script>
+    <script>
+        function showNewYearGreeting() {
+            var flagInput = document.getElementById('flag');
+            var flag = flagInput.value.trim();
+
+            if (flag === 'flag{2024}') {
+                alert('新年快乐，师傅！');
+            } else {
+                alert('Flag 不正确，请输入 flag{2024}。');
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h2>2024新年祝福</h2>
+
+    <label for="flag">请输入 Flag：</label>
+    <input type="text" id="flag" placeholder="输入你的 Flag">
+    <br>
+    <button onclick="showNewYearGreeting()">提交</button>
+
+</body>
+</html>

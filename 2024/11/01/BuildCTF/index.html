@@ -1,0 +1,195 @@
+<!DOCTYPE html><html lang="zh-cn" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>BuildCTF | CTFrookie</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.woff2"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><meta name="page-config" content="{&quot;code_fold&quot;:null}"><script class="pjax-js">var config = {"root":"/","search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 - $1 行","copy":"复制"}};
+var page_config = {
+  code_fold: null
+};
+function updatePageConfig() {
+  var newPageConfig = document.querySelector('meta[name="page-config"]');
+  if (newPageConfig) {
+    page_config = JSON.parse(newPageConfig.content);
+  }
+}
+document.addEventListener('pjax:complete', function() { updatePageConfig(); });
+updatePageConfig();</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="//unpkg.com/mermaid@10.5.0/dist/mermaid.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js"></script><script>MathJax.Hub.Config({
+ menuSettings: {
+   zoom: "None"
+ },
+ showMathMenu: false,
+ jax: ["input/TeX","output/CommonHTML"],
+ extensions: ["tex2jax.js"],
+ TeX: {
+   extensions: ["AMSmath.js","AMSsymbols.js"],
+   equationNumbers: {
+     autoNumber: "AMS"
+   }
+ },
+ tex2jax: {
+   inlineMath: [["\\(", "\\)"]],
+   displayMath: [["\\[", "\\]"]]
+ }
+});</script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('/img/bg.jpg');
+ --light-background: url('https://api.tanmantang.com/api/mc');
+ --theme-encrypt-confirm: '确认'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js"></script><script>MathJax.Hub.Config({
+  menuSettings: {
+    zoom: "None"
+  },
+  showMathMenu: false,
+  jax: ["input/TeX","output/CommonHTML"],
+  extensions: ["tex2jax.js"],
+  TeX: {
+    extensions: ["AMSmath.js","AMSsymbols.js"],
+    equationNumbers: {
+      autoNumber: "AMS"
+    }
+  },
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]]
+  }
+});
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.vercount','meta[name=page-config]'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><script class="pjax-js">reset= () => {MathJax.Hub.Queue(["Typeset", MathJax.Hub]);document.querySelector('.lg-container')?.remove()
+const postBg = document.querySelector('#post-bg');
+if (postBg) lightGallery(postBg, {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.vercount','meta[name=page-config]'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem"><a class="navBlock" href="/Links/"><span class="navItemTitle">Links</span></a></li><li class="navItem"><a class="navBlock" href="/CTFEvents/"><span class="navItemTitle">CTFEvents</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/tools/"><span class="navItemTitle">Tools</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>BuildCTF</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2024-11-01T09:17:15.000Z" id="date"> 2024-11-01</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2025-11-19T05:25:29.581Z" id="updated"> 2025-11-19</time></div></span></div></div><hr><div id="post-content"><h2 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h2><h3 id="what-is-this"><a href="#what-is-this" class="headerlink" title="what is this?"></a>what is this?</h3><p>二进制解开之后把c换成短码p换成长码逗号换成空格</p>
+<p class='item-img' data-src='/BuildCTF.assets/image-20241012115412022.png'><img src="/BuildCTF.assets/image-20241012115412022.png" alt="image-20241012115412022"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BuildCTF&#123;S0_TH1S_15_M0R5E_C0DE_!!&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="老色批"><a href="#老色批" class="headerlink" title="老色批"></a>老色批</h3><p class='item-img' data-src='/BuildCTF.assets/image-20241012111943557.png'><img src="/BuildCTF.assets/image-20241012111943557.png" alt="image-20241012111943557"></p>
+<p>base64解码即可获得flag</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BuildCTF&#123;1_am_n0t_LSB!!!&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="一念愚即般若绝，一念智即般若生"><a href="#一念愚即般若绝，一念智即般若生" class="headerlink" title="一念愚即般若绝，一念智即般若生"></a>一念愚即般若绝，一念智即般若生</h3><p>阴阳怪气编码解码获得解压密码<code>s2j6dg@*</code></p>
+<p>又是编码加密，与佛论禅</p>
+<p class='item-img' data-src='/BuildCTF.assets/image-20241012124451226.png'><img src="/BuildCTF.assets/image-20241012124451226.png" alt="image-20241012124451226"></p>
+<p>天书</p>
+<p class='item-img' data-src='/BuildCTF.assets/image-20241012124605371.png'><img src="/BuildCTF.assets/image-20241012124605371.png" alt="image-20241012124605371"></p>
+<p>Base58</p>
+<p class='item-img' data-src='/BuildCTF.assets/image-20241012124618900.png'><img src="/BuildCTF.assets/image-20241012124618900.png" alt="image-20241012124618900"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BuildCTF&#123;D3crypt10n_1s_4_l0ng_r04d&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="如果再来一次，还会选择我吗？"><a href="#如果再来一次，还会选择我吗？" class="headerlink" title="如果再来一次，还会选择我吗？"></a>如果再来一次，还会选择我吗？</h3><p>使用脚本把图片每两个字节对换一下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">def swap_bytes_in_image(image_path):</span><br><span class="line">    with open(image_path, &#x27;rb&#x27;) as f:</span><br><span class="line">        image_data = bytearray(f.read())</span><br><span class="line"></span><br><span class="line">    # 交换每两个字节的位置</span><br><span class="line">    for i in range(0, len(image_data), 2):</span><br><span class="line">        if i + 1 &lt; len(image_data):</span><br><span class="line">            image_data[i], image_data[i + 1] = image_data[i + 1], image_data[i]</span><br><span class="line"></span><br><span class="line">    # 将交换后的数据写回图片文件</span><br><span class="line">    with open(&#x27;swapped_&#x27; + image_path, &#x27;wb&#x27;) as f:</span><br><span class="line">        f.write(image_data)</span><br><span class="line"></span><br><span class="line"># 要处理的图片文件路径</span><br><span class="line">image_path = &#x27;password.png&#x27;</span><br><span class="line"></span><br><span class="line">swap_bytes_in_image(image_path)</span><br></pre></td></tr></table></figure>
+
+<p>得到密码<code>key:8!67adz6</code></p>
+<p>使用这个网站扫描损坏的条形码得到flag压缩包的密码<code>key:wo_bu_shi_xiao_hei_zi!!!</code></p>
+<p class='item-img' data-src='/BuildCTF.assets/image-20241012160133258.png'><img src="/BuildCTF.assets/image-20241012160133258.png" alt="image-20241012160133258"></p>
+<p><code>ciphey -f flag.txt</code></p>
+<p class='item-img' data-src='/BuildCTF.assets/image-20241012160740896.png'><img src="/BuildCTF.assets/image-20241012160740896.png" alt="image-20241012160740896"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BuildCTF&#123;y0u_are_great_boy&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="别真给我开盒了哥"><a href="#别真给我开盒了哥" class="headerlink" title="别真给我开盒了哥"></a>别真给我开盒了哥</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">请找出拍摄者所在的铁路线路名称，flag格式为BuildCTF&#123;xx铁路&#125;，名称以百度百科为准（要一字不差）。</span><br></pre></td></tr></table></figure>
+
+<p>使用百度地图搜索图片后面的高速<code>S3901</code>得到津霸铁路但是不对，然后看到了津保铁路试了一下对了</p>
+<p class='item-img' data-src='/BuildCTF.assets/image-20241012162010038.png'><img src="/BuildCTF.assets/image-20241012162010038.png" alt="image-20241012162010038"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BuildCTF&#123;津保铁路&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="食不食油饼"><a href="#食不食油饼" class="headerlink" title="食不食油饼"></a>食不食油饼</h3><p><a target="_blank" rel="noopener" href="https://www.guofei.site/pictures_for_blog/app/text_watermark/v1.html">文本盲水印在线解密</a></p>
+<p class='item-img' data-src='/BuildCTF.assets/image-20241012211956355.png'><img src="/BuildCTF.assets/image-20241012211956355.png" alt="image-20241012211956355"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">key:7gkjT!opo</span><br></pre></td></tr></table></figure>
+
+<p class='item-img' data-src='/BuildCTF.assets/image-20241012212046956.png'><img src="/BuildCTF.assets/image-20241012212046956.png" alt="image-20241012212046956"></p>
+<p>解压获取一张图片继续使用盲水印工具WaterMarkH获取密钥<code>8GMdP3</code></p>
+<p class='item-img' data-src='/BuildCTF.assets/image-20241012212621514.png'><img src="/BuildCTF.assets/image-20241012212621514.png" alt="image-20241012212621514"></p>
+<p>解压之后是个编码base32一下即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">(python38) C:\Users\Administrator&gt;ciphey -t &quot;IJ2WS3DEINKEM62XMF2DG4SNMFZGWXZRONPVGMC7MVQVG6L5&quot;</span><br><span class="line">Possible plaintext: &#x27;BuildCTF&#123;Wat3rMark_1s_S0_eaSy&#125;&#x27; (y/N): y</span><br><span class="line">╭────────────────────────────────────────────────────╮</span><br><span class="line">│ The plaintext is a Capture The Flag (CTF) Flag     │</span><br><span class="line">│ Formats used:                                      │</span><br><span class="line">│    base32                                          │</span><br><span class="line">│    utf8Plaintext: &quot;BuildCTF&#123;Wat3rMark_1s_S0_eaSy&#125;&quot; │</span><br><span class="line">╰────────────────────────────────────────────────────╯</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BuildCTF&#123;Wat3rMark_1s_S0_eaSy&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="四妹，你听我解释"><a href="#四妹，你听我解释" class="headerlink" title="四妹，你听我解释"></a>四妹，你听我解释</h3><p>010查看最底下得到</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">自由文明法治平等公正敬业公正友善公正公正自由自由和谐平等自由自由公正法治友善平等公正诚信文明公正民主公正诚信平等平等诚信平等法治</span><br></pre></td></tr></table></figure>
+
+<p class='item-img' data-src='/BuildCTF.assets/image-20241016190509931.png'><img src="/BuildCTF.assets/image-20241016190509931.png" alt="image-20241016190509931"></p>
+<p>高度改为800得到后半部分</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">后半部分:和谐公正平等平等友善敬业法治富强和谐民主法治诚信和谐</span><br></pre></td></tr></table></figure>
+
+<p class='item-img' data-src='/BuildCTF.assets/image-20241016190329551.png'><img src="/BuildCTF.assets/image-20241016190329551.png"></p>
+<p>在线解码<a target="_blank" rel="noopener" href="http://www.hiencode.com/cvencode.html">http://www.hiencode.com/cvencode.html</a></p>
+<p class='item-img' data-src='/BuildCTF.assets/image-20241016190929630.png'><img src="/BuildCTF.assets/image-20241016190929630.png" alt="image-20241016190929630"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BuildCTF&#123;lao_se_p1&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="四妹？还是萍萍呢？"><a href="#四妹？还是萍萍呢？" class="headerlink" title="四妹？还是萍萍呢？"></a>四妹？还是萍萍呢？</h3><p>使用在线拼图<a target="_blank" rel="noopener" href="http://tool.sooua.com/img-puzzle.html%E5%BE%97%E5%88%B0%E8%A7%A3%E5%8E%8B%E5%AF%86%E7%A0%81%60St7wg.%60">http://tool.sooua.com/img-puzzle.html得到解压密码`St7wg.`</a> 草</p>
+<p class='item-img' data-src='/BuildCTF.assets/image-20241016191254079.png'><img src="/BuildCTF.assets/image-20241016191254079.png" alt="image-20241016191254079"></p>
+<p>然后手动把四妹.png内的zip提取出来补全zip头 使用密码解压获取base64转图片</p>
+<p class='item-img' data-src='/BuildCTF.assets/image-20241101094230426.png'><img src="/BuildCTF.assets/image-20241101094230426.png" alt="image-20241101094230426"></p>
+<p class='item-img' data-src='/BuildCTF.assets/image-20241101094157506.png'><img src="/BuildCTF.assets/image-20241101094157506.png" alt="image-20241101094157506"></p>
+<p>使用puzz修复宽高</p>
+<p class='item-img' data-src='/BuildCTF.assets/image-20241101094328914.png'><img src="/BuildCTF.assets/image-20241101094328914.png" alt="image-20241101094328914"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BuildCTF&#123;PNG_@nd_H31Sh3nHu@&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="白白的真好看"><a href="#白白的真好看" class="headerlink" title="白白的真好看"></a>白白的真好看</h3><p>docx文件打开全选设置标题1得到一部分</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Flag1:BuildCTF&#123;Th3_wh1t3</span><br></pre></td></tr></table></figure>
+
+<p class='item-img' data-src='/BuildCTF.assets/image-20241016191719543.png'><img src="/BuildCTF.assets/image-20241016191719543.png" alt="image-20241016191719543"></p>
+<p>零宽字符<a target="_blank" rel="noopener" href="https://www.mzy0.com/ctftools/zerowidth1/">https://www.mzy0.com/ctftools/zerowidth1/</a></p>
+<p class='item-img' data-src='/BuildCTF.assets/image-20241016193752935.png'><img src="/BuildCTF.assets/image-20241016193752935.png" alt="image-20241016193752935"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Flag2:_wh1t3_y0u_s33</span><br></pre></td></tr></table></figure>
+
+<p>扫描汉信码<a target="_blank" rel="noopener" href="https://tuzim.net/hxdecode/%E5%9C%A8%E8%BD%AC%E6%88%90%E4%BA%8C%E7%BB%B4%E7%A0%81%E4%BD%BF%E7%94%A8%E5%BE%AE%E4%BF%A1%E6%89%AB%E6%8F%8F">https://tuzim.net/hxdecode/在转成二维码使用微信扫描</a></p>
+<p>关注异步社区发送雪得到密码：<code>snowsnow</code></p>
+<p class='item-img' data-src='/BuildCTF.assets/image-20241016194620221.png'><img src="/BuildCTF.assets/image-20241016194620221.png" alt="image-20241016194620221"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SNOW.EXE -p snowsnow snow.txt</span><br></pre></td></tr></table></figure>
+
+<p>得到最后一部分</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">_1s_n0t_wh1t3&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BuildCTF&#123;Th3_wh1t3_y0u_s33_1s_n0t_wh1t3&#125;</span><br></pre></td></tr></table></figure>
+
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2024/11/04/Numpy%E5%AD%A6%E4%B9%A0/">← 下一篇 Numpy学习</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2024/10/16/YLCTF2024/">YLCTF2024 上一篇 →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="文章目录">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="切换主题"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/img/Liu.png" alt="Logo" style="margin:undefined;border-radius:undefined;"></a><h1 id="Dr"><a href="/">Liu</a></h1><div id="description"><p>你好，我是Liu，一个热爱学习和探索的人。</p></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Misc"><span class="toc-number">1.</span> <span class="toc-text">Misc</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#what-is-this"><span class="toc-number">1.1.</span> <span class="toc-text">what is this?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%80%81%E8%89%B2%E6%89%B9"><span class="toc-number">1.2.</span> <span class="toc-text">老色批</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E5%BF%B5%E6%84%9A%E5%8D%B3%E8%88%AC%E8%8B%A5%E7%BB%9D%EF%BC%8C%E4%B8%80%E5%BF%B5%E6%99%BA%E5%8D%B3%E8%88%AC%E8%8B%A5%E7%94%9F"><span class="toc-number">1.3.</span> <span class="toc-text">一念愚即般若绝，一念智即般若生</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E6%9E%9C%E5%86%8D%E6%9D%A5%E4%B8%80%E6%AC%A1%EF%BC%8C%E8%BF%98%E4%BC%9A%E9%80%89%E6%8B%A9%E6%88%91%E5%90%97%EF%BC%9F"><span class="toc-number">1.4.</span> <span class="toc-text">如果再来一次，还会选择我吗？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%AB%E7%9C%9F%E7%BB%99%E6%88%91%E5%BC%80%E7%9B%92%E4%BA%86%E5%93%A5"><span class="toc-number">1.5.</span> <span class="toc-text">别真给我开盒了哥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A3%9F%E4%B8%8D%E9%A3%9F%E6%B2%B9%E9%A5%BC"><span class="toc-number">1.6.</span> <span class="toc-text">食不食油饼</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E5%A6%B9%EF%BC%8C%E4%BD%A0%E5%90%AC%E6%88%91%E8%A7%A3%E9%87%8A"><span class="toc-number">1.7.</span> <span class="toc-text">四妹，你听我解释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E5%A6%B9%EF%BC%9F%E8%BF%98%E6%98%AF%E8%90%8D%E8%90%8D%E5%91%A2%EF%BC%9F"><span class="toc-number">1.8.</span> <span class="toc-text">四妹？还是萍萍呢？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%99%BD%E7%99%BD%E7%9A%84%E7%9C%9F%E5%A5%BD%E7%9C%8B"><span class="toc-number">1.9.</span> <span class="toc-text">白白的真好看</span></a></li></ol></li></ol></div></div><footer><nobr><span class="icp-title">ICP</span><a class="icp-content" target="_blank" rel="noopener" href="https://beian.miit.gov.cn/">皖ICP备2023022708号-1</a></nobr><br><nobr><span class="icp-title">©</span><span class="icp-content">2023-2024</span></nobr><br><nobr>构建自 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> 使用主题 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> 主题作者 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas><script defer src="&lt;script charset=&quot;UTF-8&quot; id=&quot;LA_COLLECT&quot; src=&quot;//sdk.51.la/js-sdk-pro.min.js&quot;&gt;&lt;/script&gt;"></script><script defer src="&lt;script&gt;LA.init({id:&quot;3HQbQtTptnnrcizP&quot;,ck:&quot;3HQbQtTptnnrcizP&quot;,autoTrack:true})&lt;/script&gt;"></script><script defer src="&lt;script type=&quot;text/javascript&quot;&gt;(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src=&quot;https://www.clarity.ms/tag/&quot;+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, &quot;clarity&quot;, &quot;script&quot;, &quot;opl82iwvrr&quot;);&lt;/script&gt;"></script><script defer src="&lt;script type=&quot;text/javascript&quot;&gt; (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src=&quot;https://www.clarity.ms/tag/&quot;+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, &quot;clarity&quot;, &quot;script&quot;, &quot;oplkns4lor&quot;);&lt;/script&gt;"></script></body></html>

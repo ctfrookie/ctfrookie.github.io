@@ -1,0 +1,170 @@
+<!DOCTYPE html><html lang="zh-cn" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>BeginCTF2024 WP | CTFrookie</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.woff2"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><meta name="page-config" content="{&quot;code_fold&quot;:null}"><script class="pjax-js">var config = {"root":"/","search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 - $1 行","copy":"复制"}};
+var page_config = {
+  code_fold: null
+};
+function updatePageConfig() {
+  var newPageConfig = document.querySelector('meta[name="page-config"]');
+  if (newPageConfig) {
+    page_config = JSON.parse(newPageConfig.content);
+  }
+}
+document.addEventListener('pjax:complete', function() { updatePageConfig(); });
+updatePageConfig();</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="//unpkg.com/mermaid@10.5.0/dist/mermaid.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js"></script><script>MathJax.Hub.Config({
+ menuSettings: {
+   zoom: "None"
+ },
+ showMathMenu: false,
+ jax: ["input/TeX","output/CommonHTML"],
+ extensions: ["tex2jax.js"],
+ TeX: {
+   extensions: ["AMSmath.js","AMSsymbols.js"],
+   equationNumbers: {
+     autoNumber: "AMS"
+   }
+ },
+ tex2jax: {
+   inlineMath: [["\\(", "\\)"]],
+   displayMath: [["\\[", "\\]"]]
+ }
+});</script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('/img/bg.jpg');
+ --light-background: url('https://api.tanmantang.com/api/mc');
+ --theme-encrypt-confirm: '确认'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js"></script><script>MathJax.Hub.Config({
+  menuSettings: {
+    zoom: "None"
+  },
+  showMathMenu: false,
+  jax: ["input/TeX","output/CommonHTML"],
+  extensions: ["tex2jax.js"],
+  TeX: {
+    extensions: ["AMSmath.js","AMSsymbols.js"],
+    equationNumbers: {
+      autoNumber: "AMS"
+    }
+  },
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]]
+  }
+});
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.vercount','meta[name=page-config]'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><script class="pjax-js">reset= () => {MathJax.Hub.Queue(["Typeset", MathJax.Hub]);document.querySelector('.lg-container')?.remove()
+const postBg = document.querySelector('#post-bg');
+if (postBg) lightGallery(postBg, {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.vercount','meta[name=page-config]'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem"><a class="navBlock" href="/Links/"><span class="navItemTitle">Links</span></a></li><li class="navItem"><a class="navBlock" href="/CTFEvents/"><span class="navItemTitle">CTFEvents</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/tools/"><span class="navItemTitle">Tools</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>BeginCTF2024 WP</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2024-02-06T11:26:58.000Z" id="date"> 2024-02-06</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2025-11-19T05:25:29.581Z" id="updated"> 2025-11-19</time></div></span></div></div><hr><div id="post-content"><h2 id="MISC："><a href="#MISC：" class="headerlink" title="MISC："></a>MISC：</h2><h3 id="问卷"><a href="#问卷" class="headerlink" title="问卷"></a>问卷</h3><p class='item-img' data-src='/BeginCTF.assets/image-20240205141014619.png'><img src="/BeginCTF.assets/image-20240205141014619.png" alt="image-20240205141014619"></p>
+<h3 id="real-check-in"><a href="#real-check-in" class="headerlink" title="real check in"></a>real check in</h3><p class='item-img' data-src='/BeginCTF.assets/image-20240131111154377.png'><img src="/BeginCTF.assets/image-20240131111154377.png" alt="image-20240131111154377"></p>
+<p>使用CyberChef直接解：</p>
+<p class='item-img' data-src='/BeginCTF.assets/image-20240131111301602.png'><img src="/BeginCTF.assets/image-20240131111301602.png" alt="image-20240131111301602"></p>
+<p>FLAG：begin{WELCOMe_to_B3GinCTF_2024_H0Pe_YOU_wiL1_11ke_i7}</p>
+<h4 id="Tupper"><a href="#Tupper" class="headerlink" title="Tupper"></a>Tupper</h4><p>使用python脚本把所有文件内的字符按照文件顺序从小到大依次提取合并输出</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line"></span><br><span class="line">def read_files(folder_path):</span><br><span class="line">    result = &quot;&quot;</span><br><span class="line">    file_list = sorted(os.listdir(folder_path), key=lambda x: int(os.path.splitext(x)[0]))</span><br><span class="line">    for file_name in file_list:</span><br><span class="line">        file_path = os.path.join(folder_path, file_name)</span><br><span class="line">        if os.path.isfile(file_path):</span><br><span class="line">            with open(file_path, &#x27;r&#x27;) as file:</span><br><span class="line">                content = file.read()</span><br><span class="line">                result += content</span><br><span class="line">    return result</span><br><span class="line"></span><br><span class="line">folder_path = &quot;D://Document//BeginCTF（自由赛道）//MISC//tupper&quot;</span><br><span class="line">output = read_files(folder_path)</span><br><span class="line">print(output)</span><br></pre></td></tr></table></figure>
+
+<p>得到下面的值使用base64解码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MTQyNzgxOTM0MzI3MjgwMjYwNDkyOTg1NzQ1NzU1NTc1MzQzMjEwNjIzNDkzNTI1NDM1NjI2NTY3NjY0Njk3MDQwOTI4NzQ2ODgzNTQ2NzkzNzEyMTI0NDQzODIyOTg4MjEzNDIwOTM0NTAzOTg5MDcwOTY5NzYwMDI0NTg4MDc1OTg1MzU3MzUxNzIxMjY2NTc1MDQxMzExNzE2ODQ5MDcxNzMwODY2NTk1MDUxNDM5MjAzMDAwODU4MDg4MDk2NDcyNTY3OTAzODQzNzg1NTM3ODAyODI4OTQyMzk3NTE4OTg2MjAwNDExNDMzODMzMTcwNjQ3MjcxMzY5MDM2MzQ3NzA5MzYzOTg1MTg1NDc5MDA1MTI1NDg0MTk0ODYzNjQ5MTUzOTkyNTM5NDEyNDU5MTEyMDUyNjI0OTM1OTExNTg0OTc3MDgyMTkxMjY0NTM1ODc0NTY2MzczMDI4ODg3MDEzMDMzODIyMTA3NDg2Mjk4MDAwODE4MjE2ODQyODMxODczNjg1NDM2MDE1NTk3Nzg0MzE3MzUwMDY3OTQ3NjE1NDI0MTMwMDY2MjEyMTkyMDczMjI4MDg0NDkyMzIwNTA1Nzg4NTI0MzEzNjE2Nzg3NDUzNTU3NzY5MjExMzIzNTI0MTk5MzE5MDc4MzgyMDUwMDExODQ=</span><br></pre></td></tr></table></figure>
+
+<p>解码得到：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">14278193432728026049298574575557534321062349352543562656766469704092874688354679371212444382298821342093450398907096976002458807598535735172126657504131171684907173086659505143920300085808809647256790384378553780282894239751898620041143383317064727136903634770936398518547900512548419486364915399253941245911205262493591158497708219126453587456637302888701303382210748629800081821684283187368543601559778431735006794761542413006621219207322808449232050578852431361678745355776921132352419931907838205001184</span><br></pre></td></tr></table></figure>
+
+<p>根据题目：tupper 自我指涉公式生成图片，使用的这个网站在线生成<a target="_blank" rel="noopener" href="https://tuppers-formula.ovh/">https://tuppers-formula.ovh/</a></p>
+<p class='item-img' data-src='/BeginCTF.assets/image-20240131162448257.png'><img src="/BeginCTF.assets/image-20240131162448257.png" alt="image-20240131162448257"></p>
+<p>FLAG：begin{T4UUPER!}</p>
+<h3 id="where-is-crazyman-v1-0"><a href="#where-is-crazyman-v1-0" class="headerlink" title="where is crazyman v1.0"></a>where is crazyman v1.0</h3><p class='item-img' data-src='/BeginCTF.assets/image-20240201174425939.png'><img src="/BeginCTF.assets/image-20240201174425939.png" alt="image-20240201174425939"></p>
+<p>FLAG：begin{秋叶原}</p>
+<h3 id="where-is-crazyman-v2-0"><a href="#where-is-crazyman-v2-0" class="headerlink" title="where is crazyman v2.0"></a>where is crazyman v2.0</h3><p class='item-img' data-src='/BeginCTF.assets/image-20240201173939503.png'><img src="/BeginCTF.assets/image-20240201173939503.png" alt="image-20240201173939503"></p>
+<p>FLAG：begin{Boulevard World}</p>
+<h2 id="WEB"><a href="#WEB" class="headerlink" title="WEB:"></a>WEB:</h2><h3 id="zupload"><a href="#zupload" class="headerlink" title="zupload"></a>zupload</h3><p class='item-img' data-src='/BeginCTF.assets/image-20240201162559944.png'><img src="/BeginCTF.assets/image-20240201162559944.png" alt="image-20240201162559944"></p>
+<p>FLAG：begin{jUs7_reAd_924f8274a285}</p>
+<h2 id="Reverse"><a href="#Reverse" class="headerlink" title="Reverse:"></a>Reverse:</h2><h4 id="real-checkin-xor"><a href="#real-checkin-xor" class="headerlink" title="real checkin xor"></a>real checkin xor</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">def verify_func(ciper,key):</span><br><span class="line">    encrypted = []</span><br><span class="line">    for i in range(len(ciper)):</span><br><span class="line">        encrypted.append(ord(ciper[i])^ord(key[i%len(key)]))</span><br><span class="line">    return encrypted</span><br><span class="line"></span><br><span class="line">secret = [7, 31, 56, 25, 23, 15, 91, 21, 49, 15, 33, 88, 26, 48, 60, 58, 4, 86, 36, 64, 23, 54, 63, 0, 54, 22, 6, 55, 59, 38, 108, 39, 45, 23, 102, 27, 11, 56, 32, 0, 82, 24]</span><br><span class="line">print(&quot;这是一个保险箱,你能输入相关的key来进行解密吗?&quot;)</span><br><span class="line">input_line = input(&quot;请输入key &gt; &quot;)</span><br><span class="line">if verify_func(input_line,&quot;ez_python_xor_reverse&quot;) == secret:</span><br><span class="line">    print(&quot;密码正确&quot;)</span><br><span class="line">else:</span><br><span class="line">    print(&quot;密码错误&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>解密程序</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># ### 解密程序</span><br><span class="line"># def decrypt_func(cipher, key):</span><br><span class="line">#     decrypted = []</span><br><span class="line">#     for i in range(len(cipher)):</span><br><span class="line">#         decrypted.append(chr(cipher[i] ^ ord(key[i % len(key)])))</span><br><span class="line">#     return &#x27;&#x27;.join(decrypted)</span><br><span class="line"># cipher = [7, 31, 56, 25, 23, 15, 91, 21, 49, 15, 33, 88, 26, 48, 60, 58, 4, 86, 36, 64, 23, 54, 63, 0, 54, 22, 6, 55, 59, 38, 108, 39, 45, 23, 102, 27, 11, 56, 32, 0, 82, 24]</span><br><span class="line"># key = &quot;ez_python_xor_reverse&quot;</span><br><span class="line"></span><br><span class="line"># plaintext = decrypt_func(cipher, key)</span><br><span class="line"># print(&quot;解密结果：&quot;, plaintext)</span><br></pre></td></tr></table></figure>
+
+<p>FLAG：begin{3z_PY7hoN_r3V3rSE_For_TH3_Be9inNEr!}</p>
+<h2 id="Forensics"><a href="#Forensics" class="headerlink" title="Forensics:"></a>Forensics:</h2><h3 id="逆向工程-reverse-入门指南"><a href="#逆向工程-reverse-入门指南" class="headerlink" title="逆向工程(reverse)入门指南"></a>逆向工程(reverse)入门指南</h3><p>打开是PDF文件直接全选标注颜色发现上面有一块Ctrl+A全选</p>
+<p class='item-img' data-src='/BeginCTF.assets/image-20240202194857190.png'><img src="/BeginCTF.assets/image-20240202194857190.png" alt="image-20240202194857190"></p>
+<p>Ctrl+V复制到其他地方查看发现flag</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(省略了其他的内容)</span><br><span class="line">查看AndroidManifest.xml 中 \&lt;application&gt; 元</span><br><span class="line">素中是否包含了 android:debuggable=&quot;true&quot;</span><br><span class="line">begin&#123;0kay_1_thiNK_YoU_Ar3_a1Re@DY_rE4D_6uiDe8ooK_AnD_9OT_FL46&#125;</span><br></pre></td></tr></table></figure>
+
+<p>FLAG：begin{0kay_1_thiNK_YoU_Ar3_a1Re@DY_rE4D_6uiDe8ooK_AnD_9OT_FL46}</p>
+<h4 id="学取证咯-cmd"><a href="#学取证咯-cmd" class="headerlink" title="学取证咯 - cmd"></a>学取证咯 - cmd</h4><p>执行：volatility_2.6_win64_standalone.exe -f 学取证咯.raw –profile&#x3D;Win7SP1x64 cmdscan</p>
+<p class='item-img' data-src='/BeginCTF.assets/image-20240202201243214.png'><img src="/BeginCTF.assets/image-20240202201243214.png" alt="image-20240202201243214"></p>
+<p> FLAG：begin{Cmd_1in3_109_i5_imp0rt@nt}</p>
+<h3 id="学取证咯-还记得ie吗"><a href="#学取证咯-还记得ie吗" class="headerlink" title="学取证咯 - 还记得ie吗?"></a>学取证咯 - 还记得ie吗?</h3><p>开始使用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">volatility_2.6_win64_standalone.exe -f 学取证咯.raw --profile=Win7SP0x64 iehistory</span><br></pre></td></tr></table></figure>
+
+<p>并未找到flag</p>
+<p>搜索教程中发现浏览器的历史记录有本地文件，使用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">volatility_2.6_win64_standalone.exe -f 学取证咯.raw --profile=Win7SP0x64 filescan</span><br></pre></td></tr></table></figure>
+
+<p>查找浏览器的历史文件history文件夹相关文件</p>
+<p class='item-img' data-src='/BeginCTF.assets/image-20240202214801024.png'><img src="/BeginCTF.assets/image-20240202214801024.png" alt="image-20240202214801024"></p>
+<p>根据下图左侧的0x编号提取文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">volatility_2.6_win64_standalone.exe -f 学取证咯.raw --profile=Win7SP0x64 dumpfiles -Q 0x000000001e62b430 -D ./            </span><br></pre></td></tr></table></figure>
+
+<p class='item-img' data-src='/BeginCTF.assets/image-20240202214825503.png'><img src="/BeginCTF.assets/image-20240202214825503.png" alt="image-20240202214825503"></p>
+<p>提取出来的bat文件改成txt搜索flag找到flag（顺便发现另一题的机密文件）</p>
+<p class='item-img' data-src='/BeginCTF.assets/image-20240202215024983.png'><img src="/BeginCTF.assets/image-20240202215024983.png" alt="image-20240202215024983"></p>
+<p>FLAG：begin{Y0v_c@n_g3t_th3_i3hi5t0ry}</p>
+<h3 id="学取证咯-机密文件"><a href="#学取证咯-机密文件" class="headerlink" title="学取证咯 - 机密文件"></a>学取证咯 - 机密文件</h3><p>机密文件</p>
+<p class='item-img' data-src='/BeginCTF.assets/image-20240202215713168.png'><img src="/BeginCTF.assets/image-20240202215713168.png" alt="image-20240202215713168"></p>
+<p>同样把文件提取出来改名字后缀直接打开得到flag</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">volatility_2.6_win64_standalone.exe -f 学取证咯.raw --profile=Win7SP0x64 dumpfiles -Q 0x000000001e742dd0 -D ./</span><br></pre></td></tr></table></figure>
+
+<p class='item-img' data-src='/BeginCTF.assets/image-20240202215817463.png'><img src="/BeginCTF.assets/image-20240202215817463.png" alt="image-20240202215817463"></p>
+<p>FLAG：begin{Y0v_c@n_d0vvn_th3_fi13}</p>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2024/02/14/NSSCTF-Round-18-WP/">← 下一篇 NSSCTF-Round#18-WP</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2024/01/28/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Cweb%E6%96%B0%E6%89%8B/">攻防世界web新手 上一篇 →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="文章目录">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="切换主题"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/img/Liu.png" alt="Logo" style="margin:undefined;border-radius:undefined;"></a><h1 id="Dr"><a href="/">Liu</a></h1><div id="description"><p>你好，我是Liu，一个热爱学习和探索的人。</p></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#MISC%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">MISC：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E5%8D%B7"><span class="toc-number">1.1.</span> <span class="toc-text">问卷</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#real-check-in"><span class="toc-number">1.2.</span> <span class="toc-text">real check in</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Tupper"><span class="toc-number">1.2.1.</span> <span class="toc-text">Tupper</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#where-is-crazyman-v1-0"><span class="toc-number">1.3.</span> <span class="toc-text">where is crazyman v1.0</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#where-is-crazyman-v2-0"><span class="toc-number">1.4.</span> <span class="toc-text">where is crazyman v2.0</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WEB"><span class="toc-number">2.</span> <span class="toc-text">WEB:</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#zupload"><span class="toc-number">2.1.</span> <span class="toc-text">zupload</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reverse"><span class="toc-number">3.</span> <span class="toc-text">Reverse:</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#real-checkin-xor"><span class="toc-number">3.0.1.</span> <span class="toc-text">real checkin xor</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Forensics"><span class="toc-number">4.</span> <span class="toc-text">Forensics:</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B-reverse-%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97"><span class="toc-number">4.1.</span> <span class="toc-text">逆向工程(reverse)入门指南</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%A6%E5%8F%96%E8%AF%81%E5%92%AF-cmd"><span class="toc-number">4.1.1.</span> <span class="toc-text">学取证咯 - cmd</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%A6%E5%8F%96%E8%AF%81%E5%92%AF-%E8%BF%98%E8%AE%B0%E5%BE%97ie%E5%90%97"><span class="toc-number">4.2.</span> <span class="toc-text">学取证咯 - 还记得ie吗?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%A6%E5%8F%96%E8%AF%81%E5%92%AF-%E6%9C%BA%E5%AF%86%E6%96%87%E4%BB%B6"><span class="toc-number">4.3.</span> <span class="toc-text">学取证咯 - 机密文件</span></a></li></ol></li></ol></div></div><footer><nobr><span class="icp-title">ICP</span><a class="icp-content" target="_blank" rel="noopener" href="https://beian.miit.gov.cn/">皖ICP备2023022708号-1</a></nobr><br><nobr><span class="icp-title">©</span><span class="icp-content">2023-2024</span></nobr><br><nobr>构建自 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> 使用主题 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> 主题作者 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas><script defer src="&lt;script charset=&quot;UTF-8&quot; id=&quot;LA_COLLECT&quot; src=&quot;//sdk.51.la/js-sdk-pro.min.js&quot;&gt;&lt;/script&gt;"></script><script defer src="&lt;script&gt;LA.init({id:&quot;3HQbQtTptnnrcizP&quot;,ck:&quot;3HQbQtTptnnrcizP&quot;,autoTrack:true})&lt;/script&gt;"></script><script defer src="&lt;script type=&quot;text/javascript&quot;&gt;(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src=&quot;https://www.clarity.ms/tag/&quot;+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, &quot;clarity&quot;, &quot;script&quot;, &quot;opl82iwvrr&quot;);&lt;/script&gt;"></script><script defer src="&lt;script type=&quot;text/javascript&quot;&gt; (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src=&quot;https://www.clarity.ms/tag/&quot;+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, &quot;clarity&quot;, &quot;script&quot;, &quot;oplkns4lor&quot;);&lt;/script&gt;"></script></body></html>
