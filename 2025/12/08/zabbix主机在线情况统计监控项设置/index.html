@@ -1,0 +1,182 @@
+<!DOCTYPE html><html lang="zh-cn" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>zabbix主机在线情况统计监控项设置 | CTFrookie</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.woff2"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><meta name="page-config" content="{&quot;code_fold&quot;:null}"><script class="pjax-js">var config = {"root":"/","search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 - $1 行","copy":"复制"}};
+var page_config = {
+  code_fold: null
+};
+function updatePageConfig() {
+  var newPageConfig = document.querySelector('meta[name="page-config"]');
+  if (newPageConfig) {
+    page_config = JSON.parse(newPageConfig.content);
+  }
+}
+document.addEventListener('pjax:complete', function() { updatePageConfig(); });
+updatePageConfig();</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="//unpkg.com/mermaid@10.5.0/dist/mermaid.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js"></script><script>MathJax.Hub.Config({
+ menuSettings: {
+   zoom: "None"
+ },
+ showMathMenu: false,
+ jax: ["input/TeX","output/CommonHTML"],
+ extensions: ["tex2jax.js"],
+ TeX: {
+   extensions: ["AMSmath.js","AMSsymbols.js"],
+   equationNumbers: {
+     autoNumber: "AMS"
+   }
+ },
+ tex2jax: {
+   inlineMath: [["\\(", "\\)"]],
+   displayMath: [["\\[", "\\]"]]
+ }
+});</script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('/img/bg.jpg');
+ --light-background: url('https://api.tanmantang.com/api/mc');
+ --theme-encrypt-confirm: '确认'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js"></script><script>MathJax.Hub.Config({
+  menuSettings: {
+    zoom: "None"
+  },
+  showMathMenu: false,
+  jax: ["input/TeX","output/CommonHTML"],
+  extensions: ["tex2jax.js"],
+  TeX: {
+    extensions: ["AMSmath.js","AMSsymbols.js"],
+    equationNumbers: {
+      autoNumber: "AMS"
+    }
+  },
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]]
+  }
+});
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.vercount','meta[name=page-config]'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><script class="pjax-js">reset= () => {MathJax.Hub.Queue(["Typeset", MathJax.Hub]);document.querySelector('.lg-container')?.remove()
+const postBg = document.querySelector('#post-bg');
+if (postBg) lightGallery(postBg, {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.vercount','meta[name=page-config]'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem"><a class="navBlock" href="/Links/"><span class="navItemTitle">Links</span></a></li><li class="navItem"><a class="navBlock" href="/CTFEvents/"><span class="navItemTitle">CTFEvents</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/tools/"><span class="navItemTitle">Tools</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>zabbix主机在线情况统计监控项设置</h1><div id="post-info"><span>文章发布时间: <div class="control"><time datetime="2025-12-08T10:53:03.000Z" id="date"> 2025-12-08</time></div></span><br><span>最后更新时间: <div class="control"><time datetime="2025-12-13T03:36:57.155Z" id="updated"> 2025-12-13</time></div></span></div></div><hr><div id="post-content"><p>版本：Zabbix 7.4.4</p>
+<h2 id="创建监控项"><a href="#创建监控项" class="headerlink" title="创建监控项"></a>创建监控项</h2><p>首先，登录到Zabbix前端，导航到“配置” -&gt; “主机”，选择你想要监控的主机，然后点击“监控项”选项卡。<br>点击“创建监控项”按钮，填写以下信息：</p>
+<ul>
+<li><strong>名称</strong>: 在线主机数</li>
+<li><strong>类型</strong>: 可计算的</li>
+<li><strong>键值</strong>: online_icmp_hosts</li>
+<li><strong>数据类型</strong>: 数字(默认)</li>
+<li><strong>其余参数默认</strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sum</span>(last_foreach(/*/icmpping?[group=<span class="string">&quot;交换机&quot;</span>]))</span><br></pre></td></tr></table></figure>
+
+<p class='item-img' data-src='/%5Cimg%5Czabbix%E4%B8%BB%E6%9C%BA%E5%9C%A8%E7%BA%BF%E6%83%85%E5%86%B5%E7%BB%9F%E8%AE%A1%E7%9B%91%E6%8E%A7%E9%A1%B9%E8%AE%BE%E7%BD%AE%5Cimage.png'><img src="/%5Cimg%5Czabbix%E4%B8%BB%E6%9C%BA%E5%9C%A8%E7%BA%BF%E6%83%85%E5%86%B5%E7%BB%9F%E8%AE%A1%E7%9B%91%E6%8E%A7%E9%A1%B9%E8%AE%BE%E7%BD%AE%5Cimage.png" alt="alt text"></p>
+<h2 id="无宏版主机ICMP监控公式清单"><a href="#无宏版主机ICMP监控公式清单" class="headerlink" title="无宏版主机ICMP监控公式清单"></a>无宏版主机ICMP监控公式清单</h2><p>你现在希望暂时不用宏，直接获取三个明确的公式（总主机数、在线主机数、离线主机数），我这就为你整理好无需宏、可直接使用的完整公式。</p>
+<h3 id="无宏版完整公式清单"><a href="#无宏版完整公式清单" class="headerlink" title="无宏版完整公式清单"></a>无宏版完整公式清单</h3><p>以下公式默认统计<strong>所有主机</strong>（若要指定具体组，只需把公式中的<code>[group=&quot;交换机&quot;]</code>替换为你需要的组名即可）：</p>
+<table>
+<thead>
+<tr>
+<th>监控项 Key</th>
+<th>Formula（无宏完整公式）</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>total_icmp_hosts</td>
+<td>count(last_foreach(&#x2F;*&#x2F;icmpping,1m))</td>
+<td>所有配置ICMP监控的主机总数</td>
+</tr>
+<tr>
+<td>online_icmp_hosts</td>
+<td>sum(last_foreach(&#x2F;*&#x2F;icmpping))</td>
+<td>所有在线主机数量（ICMP可达）</td>
+</tr>
+<tr>
+<td>offline_icmp_hosts</td>
+<td>count(last_foreach(&#x2F;<em>&#x2F;icmpping,1m)) - sum(last_foreach(&#x2F;</em>&#x2F;icmpping))</td>
+<td>所有离线主机数量（ICMP不可达）</td>
+</tr>
+</tbody></table>
+<h3 id="若需指定具体组（如交换机），公式调整为："><a href="#若需指定具体组（如交换机），公式调整为：" class="headerlink" title="若需指定具体组（如交换机），公式调整为："></a>若需指定具体组（如交换机），公式调整为：</h3><table>
+<thead>
+<tr>
+<th>监控项 Key</th>
+<th>Formula（指定交换机组）</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>total_icmp_hosts</td>
+<td>count(last_foreach(&#x2F;*&#x2F;icmpping?[group&#x3D;”交换机”],1m))</td>
+<td>交换机组所有配置ICMP监控的主机总数</td>
+</tr>
+<tr>
+<td>online_icmp_hosts</td>
+<td>sum(last_foreach(&#x2F;*&#x2F;icmpping?[group&#x3D;”交换机”]))</td>
+<td>交换机组在线主机数量（ICMP可达）</td>
+</tr>
+<tr>
+<td>offline_icmp_hosts</td>
+<td>count(last_foreach(&#x2F;<em>&#x2F;icmpping?[group&#x3D;”交换机”],1m)) - sum(last_foreach(&#x2F;</em>&#x2F;icmpping?[group&#x3D;”交换机”]))</td>
+<td>交换机组离线主机数量（ICMP不可达）</td>
+</tr>
+</tbody></table>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ol>
+<li><p>无宏公式核心是直接写死范围（全局&#x2F;指定组），无需依赖宏配置；</p>
+</li>
+<li><p>全局统计去掉<code>?[group=&quot;组名&quot;]</code>，指定组则添加该筛选条件；</p>
+</li>
+<li><p>离线主机数公式是总主机数减去在线主机数，逻辑与之前一致。</p>
+</li>
+</ol>
+<blockquote>
+<p>（注：文档部分内容可能由 AI 生成）</p>
+</blockquote>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2025/12/13/ISCTF2025/">← 下一篇 ISCTF2025</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2025/05/30/jellyfin/">jellyfin 上一篇 →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="回到顶部" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="文章目录">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="切换主题"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/img/Liu.png" alt="Logo" style="margin:undefined;border-radius:undefined;"></a><h1 id="Dr"><a href="/">Liu</a></h1><div id="description"><p>你好，我是Liu，一个热爱学习和探索的人。</p></div></div><div id="aside-block"><div id="toc-div"><h1>目录</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%9B%91%E6%8E%A7%E9%A1%B9"><span class="toc-number">1.</span> <span class="toc-text">创建监控项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%A0%E5%AE%8F%E7%89%88%E4%B8%BB%E6%9C%BAICMP%E7%9B%91%E6%8E%A7%E5%85%AC%E5%BC%8F%E6%B8%85%E5%8D%95"><span class="toc-number">2.</span> <span class="toc-text">无宏版主机ICMP监控公式清单</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A0%E5%AE%8F%E7%89%88%E5%AE%8C%E6%95%B4%E5%85%AC%E5%BC%8F%E6%B8%85%E5%8D%95"><span class="toc-number">2.1.</span> <span class="toc-text">无宏版完整公式清单</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8B%A5%E9%9C%80%E6%8C%87%E5%AE%9A%E5%85%B7%E4%BD%93%E7%BB%84%EF%BC%88%E5%A6%82%E4%BA%A4%E6%8D%A2%E6%9C%BA%EF%BC%89%EF%BC%8C%E5%85%AC%E5%BC%8F%E8%B0%83%E6%95%B4%E4%B8%BA%EF%BC%9A"><span class="toc-number">2.2.</span> <span class="toc-text">若需指定具体组（如交换机），公式调整为：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">2.3.</span> <span class="toc-text">总结</span></a></li></ol></li></ol></div></div><footer><nobr><span class="icp-title">ICP</span><a class="icp-content" target="_blank" rel="noopener" href="https://beian.miit.gov.cn/">皖ICP备2023022708号-1</a></nobr><br><nobr><span class="icp-title">©</span><span class="icp-content">2023-2024</span></nobr><br><nobr>构建自 <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> 使用主题 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> 主题作者 <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas><script defer src="&lt;script charset=&quot;UTF-8&quot; id=&quot;LA_COLLECT&quot; src=&quot;//sdk.51.la/js-sdk-pro.min.js&quot;&gt;&lt;/script&gt;"></script><script defer src="&lt;script&gt;LA.init({id:&quot;3HQbQtTptnnrcizP&quot;,ck:&quot;3HQbQtTptnnrcizP&quot;,autoTrack:true})&lt;/script&gt;"></script><script defer src="&lt;script type=&quot;text/javascript&quot;&gt;(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src=&quot;https://www.clarity.ms/tag/&quot;+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, &quot;clarity&quot;, &quot;script&quot;, &quot;opl82iwvrr&quot;);&lt;/script&gt;"></script><script defer src="&lt;script type=&quot;text/javascript&quot;&gt; (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src=&quot;https://www.clarity.ms/tag/&quot;+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, &quot;clarity&quot;, &quot;script&quot;, &quot;oplkns4lor&quot;);&lt;/script&gt;"></script></body></html>

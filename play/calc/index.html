@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hacker Console</title>
+  <meta http-equiv="refresh" content="5;url=https://www.bilibili.com/video/BV1RJ4m1e7gj/?spm_id_from=333.1073.channel.secondary_floor_video.click&vd_source=4d93bef70ea6d8e3f6a9466925dadb0d">
+ <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+    <script>LA.init({id:"3HQbQtTptnnrcizP",ck:"3HQbQtTptnnrcizP"})</script>
+  <style>
+     body {
+      position: relative;
+    }
+    #overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 9998;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #image-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+      cursor: move;
+    }
+    img {
+    margin-top: 20vh;
+      max-width: 100%;
+      max-height: 100vh;
+    }
+    body {
+      background-color: #000;
+      color: #0f0;
+      font-family: 'Courier New', monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .console {
+      padding: 20px;
+      border: 2px solid #0f0;
+      border-radius: 5px;
+      background-color: #111;
+      text-align: left;
+      box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    }
+    .console-line {
+      line-height: 1.6;
+    }
+  </style>
+ 
+</head>
+<body>
+  <div class="console">
+    <div class="console-line">Access Granted</div>
+    <div class="console-line">Initiating Hack Sequence...</div>
+    <div class="console-line">Establishing Connection...</div>
+    <div class="console-line">Decrypting Firewall...</div>
+    <div class="console-line">Accessing Mainframe...</div>
+    <div class="console-line">Downloading Data...</div>
+    <div class="console-line">Hack Complete. Welcome, Administrator.</div>
+  </div>
+  <div id="overlay" style="display:none"></div>
+  <div id="image-container" style="display:none">
+    <img src="calc.png" alt="Popup Image" id="popup-image">
+  </div>
+  <script>
+    let isDragging = false;
+    let offset = { x: 0, y: 0 };
+    const image = document.getElementById('image-container');
+    const popupImage = document.getElementById('popup-image');
+
+    popupImage.addEventListener('mousedown', function(e) {
+      isDragging = true;
+      offset.x = e.clientX - image.getBoundingClientRect().left;
+      offset.y = e.clientY - image.getBoundingClientRect().top;
+    });
+
+    document.addEventListener('mousemove', function(e) {
+      if (isDragging) {
+        image.style.left = e.clientX - offset.x + 'px';
+        image.style.top = e.clientY - offset.y + 'px';
+      }
+    });
+
+    document.addEventListener('mouseup', function() {
+      isDragging = false;
+    });
+
+    setTimeout(function() {
+      document.getElementById('overlay').style.display = 'block';
+      document.getElementById('image-container').style.display = 'block';
+    }, 1000); // 等待1秒后弹出图片
+  </script>
+</body>
+</html>
